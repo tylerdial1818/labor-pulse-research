@@ -3,6 +3,7 @@
 lpresearch run utah-roi                 run a pipeline
 lpresearch verify --facts F note.md     check numbers in any Markdown file
 lpresearch new-note utah-roi --title "..." set up a note folder with its facts snapshot
+lpresearch index-notes                  rewrite notes/index.json, which the site reads
 lpresearch check-notes                  what CI runs on notes/
 """
 
@@ -66,6 +67,13 @@ def _facts(args: argparse.Namespace) -> int:
     return 0
 
 
+def _index_notes(args: argparse.Namespace) -> int:
+    from lpresearch import notes
+
+    print(notes.write_index(Path(args.notes_dir)))
+    return 0
+
+
 def _check_notes(args: argparse.Namespace) -> int:
     from lpresearch import notes
 
@@ -106,6 +114,10 @@ def main(argv: list[str] | None = None) -> int:
     facts_p = sub.add_parser("facts", help="list the facts a study produces")
     facts_p.add_argument("study")
     facts_p.set_defaults(func=_facts)
+
+    index_p = sub.add_parser("index-notes", help="rewrite notes/index.json, which the LaborPulse site reads")
+    index_p.add_argument("--notes-dir", default=str(studies.REPO / "notes"))
+    index_p.set_defaults(func=_index_notes)
 
     check_p = sub.add_parser("check-notes", help="verify every note and its facts snapshot")
     check_p.add_argument("--notes-dir", default=str(studies.REPO / "notes"))

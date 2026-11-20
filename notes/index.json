@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "notes": [
+    {
+      "study": "utah_roi",
+      "slug": "2026-11-20-what-utah-gets-back-from-sector-training",
+      "path": "utah_roi/2026-11-20-what-utah-gets-back-from-sector-training/note.md",
+      "title": "What Utah gets back from sector training",
+      "date": "2026-11-20",
+      "byline": "LaborPulse Research Desk",
+      "model_version": "0.1.0",
+      "status": "published",
+      "summary": "Sector training that prepares adults for specific in-demand jobs is one of the few workforce strategies with strong randomized evidence behind it. This analysis asks what Utah would get back if it offered a program modeled on WorkAdvance, a four-site randomized trial of sector training, to a cohort of 1,000 eligible adults."
+    }
+  ]
+}

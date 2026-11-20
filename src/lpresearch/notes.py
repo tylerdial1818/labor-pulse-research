@@ -14,6 +14,11 @@ pull request for review.
 `check_notes` is what CI runs: every note must pass the verifier against its
 snapshot, and every snapshot value must still match what the pipeline
 computes today, so a note can't drift from the model behind it.
+
+`notes/index.json` lists every note with its front matter and summary. The
+LaborPulse site reads it (and each note.md) from this repo's main branch, so a
+merged note with `status: "published"` appears on the site without a deploy.
+`lpresearch index-notes` rewrites it, and CI fails when it is out of date.
 """
 
 from __future__ import annotations
@@ -29,6 +34,9 @@ from lpresearch.facts import FactSheet
 from lpresearch.verify_numbers import unverified
 
 BYLINE = "LaborPulse Research Desk"
+STATUSES = ("draft", "published")
+INDEX_FILE = "index.json"
+INDEX_SCHEMA_VERSION = 1
 
 _FRONT_MATTER = re.compile(r"\A---\n(.*?)\n---\n", re.DOTALL)
 
@@ -70,6 +78,56 @@ def note_body(text: str) -> str:
     return text[match.end() :] if match else text
 
 
+def front_matter(text: str) -> dict:
+    """The front matter as a dict. Each line is `key: <JSON value>`, as written by new_note."""
+    match = _FRONT_MATTER.match(text)
+    if not match:
+        return {}
+    fields = {}
+    for line in match.group(1).splitlines():
+        key, _, value = line.partition(":")
+        fields[key.strip()] = json.loads(value.strip())
+    return fields
+
+
+def summary(body: str) -> str:
+    """The first paragraph of prose after the title, used as the note's summary."""
+    for block in re.split(r"\n\s*\n", body.strip()):
+        block = block.strip()
+        if block and not block.startswith(("#", "<!--")):
+            return " ".join(block.split())
+    return ""
+
+
+def build_index(notes_dir: Path) -> dict:
+    """Every note's metadata, newest first, in the form the site reads."""
+    entries = []
+    for note in notes_dir.glob("*/*/note.md"):
+        text = note.read_text(encoding="utf-8")
+        meta = front_matter(text)
+        entries.append(
+            {
+                "study": note.parent.parent.name,
+                "slug": note.parent.name,
+                "path": note.relative_to(notes_dir).as_posix(),
+                "title": meta.get("title", ""),
+                "date": meta.get("date", ""),
+                "byline": meta.get("byline", ""),
+                "model_version": meta.get("model_version", ""),
+                "status": meta.get("status", ""),
+                "summary": summary(note_body(text)),
+            }
+        )
+    entries.sort(key=lambda e: (e["date"], e["slug"]), reverse=True)
+    return {"schema_version": INDEX_SCHEMA_VERSION, "notes": entries}
+
+
+def write_index(notes_dir: Path) -> Path:
+    path = notes_dir / INDEX_FILE
+    path.write_text(json.dumps(build_index(notes_dir), indent=2) + "\n", encoding="utf-8")
+    return path
+
+
 @dataclass
 class NoteProblem:
     note: Path
@@ -83,6 +141,9 @@ def check_notes(notes_dir: Path, current: dict[str, FactSheet]) -> list[NoteProb
         text = note.read_text(encoding="utf-8")
         if "<!-- Write the note here" in text:
             problems.append(NoteProblem(note, "still has the new-note placeholder"))
+        status = front_matter(text).get("status")
+        if status not in STATUSES:
+            problems.append(NoteProblem(note, f"status must be one of {', '.join(STATUSES)}, not {status!r}"))
         snapshot_path = note.parent / "facts.json"
         if not snapshot_path.exists():
             problems.append(NoteProblem(note, "missing facts.json snapshot"))
@@ -102,4 +163,9 @@ def check_notes(notes_dir: Path, current: dict[str, FactSheet]) -> list[NoteProb
                 problems.append(
                     NoteProblem(note, f"fact {fact.id} is {fact.value} in the snapshot but {live_values[fact.id]} now")
                 )
+    index_path = notes_dir / INDEX_FILE
+    if any(notes_dir.glob("*/*/note.md")):
+        current_index = json.loads(index_path.read_text(encoding="utf-8")) if index_path.exists() else None
+        if current_index != build_index(notes_dir):
+            problems.append(NoteProblem(index_path, "is out of date; run `lpresearch index-notes`"))
     return problems
