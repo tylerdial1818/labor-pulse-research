@@ -21,6 +21,7 @@ def write_body(folder, body):
     text = path.read_text()
     head = text[: text.index("# ")]
     path.write_text(head + body)
+    notes.write_index(folder.parent.parent)
 
 
 def test_new_note_creates_front_matter_and_snapshot(tmp_path):
@@ -33,6 +34,7 @@ def test_new_note_creates_front_matter_and_snapshot(tmp_path):
 
 def test_placeholder_fails_the_check(tmp_path):
     notes.new_note(sheet(), "Training pays off", "Utah ROI", tmp_path, today=TODAY)
+    notes.write_index(tmp_path)
     assert [p.message for p in notes.check_notes(tmp_path, {"x": sheet()})] == ["still has the new-note placeholder"]
 
 
@@ -74,3 +76,41 @@ def test_utah_facts_back_a_realistic_note(tmp_path):
         "from 2011.\n",
     )
     assert notes.check_notes(tmp_path, {"utah_roi": facts}) == []
+
+
+def test_index_lists_notes_with_summary(tmp_path):
+    folder = notes.new_note(sheet(), "Training pays off", "Utah ROI", tmp_path, today=TODAY)
+    write_body(folder, "# Training pays off\n\nIt costs $7,505\nper person.\n\n## More\n\nDetail.\n")
+    index = notes.build_index(tmp_path)
+    assert index["notes"] == [
+        {
+            "study": "x",
+            "slug": "2026-11-20-training-pays-off",
+            "path": "x/2026-11-20-training-pays-off/note.md",
+            "title": "Training pays off",
+            "date": "2026-11-20",
+            "byline": "LaborPulse Research Desk",
+            "model_version": "0.1.0",
+            "status": "draft",
+            "summary": "It costs $7,505 per person.",
+        }
+    ]
+
+
+def test_stale_index_fails(tmp_path):
+    folder = notes.new_note(sheet(), "Training pays off", "Utah ROI", tmp_path, today=TODAY)
+    write_body(folder, "# Training pays off\n\nIt returns $4.77 per dollar.\n")
+    (folder / "note.md").write_text((folder / "note.md").read_text().replace('"draft"', '"published"'))
+    problems = notes.check_notes(tmp_path, {"x": sheet()})
+    assert [p.message for p in problems] == ["is out of date; run `lpresearch index-notes`"]
+
+
+def test_unknown_status_fails(tmp_path):
+    folder = notes.new_note(sheet(), "Training pays off", "Utah ROI", tmp_path, today=TODAY)
+    write_body(folder, "# Training pays off\n\nIt returns $4.77 per dollar.\n")
+    path = folder / "note.md"
+    path.write_text(path.read_text().replace('"draft"', '"final"'))
+    notes.write_index(tmp_path)
+    assert [p.message for p in notes.check_notes(tmp_path, {"x": sheet()})] == [
+        "status must be one of draft, published, not 'final'"
+    ]

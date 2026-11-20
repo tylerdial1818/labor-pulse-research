@@ -1,0 +1,1624 @@
+{
+  "schema_version": 1,
+  "study": "utah_roi",
+  "model_version": "0.1.0",
+  "facts": [
+    {
+      "id": "horizon_years",
+      "value": 10.0,
+      "unit": "years",
+      "description": "Years after enrollment in the core model",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/model_results.json",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "cohort_size",
+      "value": 1000.0,
+      "unit": "count",
+      "description": "Illustrative cohort offered the program",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/model_results.json",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "simulation_draws",
+      "value": 10000.0,
+      "unit": "count",
+      "description": "Monte Carlo draws",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/model_results.json",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "discount_rate",
+      "value": 0.03,
+      "unit": "proportion",
+      "description": "Reference real discount rate",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/model_results.json",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "program_cost_per_person",
+      "value": 7505.288836504436,
+      "unit": "usd",
+      "description": "Reference net program cost per person offered, 2025 dollars",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/model_results.json",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "break_even_effect_scalar",
+      "value": 0.20946920662430799,
+      "unit": "proportion",
+      "description": "Share of the reference earnings effect needed for societal break-even",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/model_results.json",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "participant_npv_per_person",
+      "value": 28023.80417578836,
+      "unit": "usd",
+      "description": "Participant net present value per person offered, Reference scenario, 2025 dollars",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/model_results.json",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "participant_bcr",
+      "value": 4.589928057553958,
+      "unit": "ratio",
+      "description": "Participant benefit-cost ratio, Reference scenario",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/model_results.json",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "participant_probability_npv_positive",
+      "value": 0.9978,
+      "unit": "proportion",
+      "description": "Share of Monte Carlo draws with positive participant net benefits",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/simulation_summary.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "participant_npv_p05",
+      "value": 9873.508123658346,
+      "unit": "usd",
+      "description": "Participant NPV per person, Monte Carlo p05",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/simulation_summary.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "participant_npv_median",
+      "value": 25646.719617790703,
+      "unit": "usd",
+      "description": "Participant NPV per person, Monte Carlo median",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/simulation_summary.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "participant_npv_p95",
+      "value": 58267.74163770653,
+      "unit": "usd",
+      "description": "Participant NPV per person, Monte Carlo p95",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/simulation_summary.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "utah_government_npv_per_person",
+      "value": -6241.6904518246,
+      "unit": "usd",
+      "description": "Utah Government net present value per person offered, Reference scenario, 2025 dollars",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/model_results.json",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "utah_government_bcr",
+      "value": 0.16836106007458507,
+      "unit": "ratio",
+      "description": "Utah Government benefit-cost ratio, Reference scenario",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/model_results.json",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "utah_government_probability_npv_positive",
+      "value": 0.0,
+      "unit": "proportion",
+      "description": "Share of Monte Carlo draws with positive utah government net benefits",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/simulation_summary.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "utah_government_npv_p05",
+      "value": -9925.88129520987,
+      "unit": "usd",
+      "description": "Utah Government NPV per person, Monte Carlo p05",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/simulation_summary.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "utah_government_npv_median",
+      "value": -6529.870860195424,
+      "unit": "usd",
+      "description": "Utah Government NPV per person, Monte Carlo median",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/simulation_summary.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "utah_government_npv_p95",
+      "value": -2694.5430800370536,
+      "unit": "usd",
+      "description": "Utah Government NPV per person, Monte Carlo p95",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/simulation_summary.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "combined_government_npv_per_person",
+      "value": 300.94118440654876,
+      "unit": "usd",
+      "description": "Combined Government net present value per person offered, Reference scenario, 2025 dollars",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/model_results.json",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "combined_government_bcr",
+      "value": 1.0400972155718808,
+      "unit": "ratio",
+      "description": "Combined Government benefit-cost ratio, Reference scenario",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/model_results.json",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "combined_government_probability_npv_positive",
+      "value": 0.4149,
+      "unit": "proportion",
+      "description": "Share of Monte Carlo draws with positive combined government net benefits",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/simulation_summary.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "combined_government_npv_p05",
+      "value": -6054.9839940686115,
+      "unit": "usd",
+      "description": "Combined Government NPV per person, Monte Carlo p05",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/simulation_summary.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "combined_government_npv_median",
+      "value": -920.7014241704144,
+      "unit": "usd",
+      "description": "Combined Government NPV per person, Monte Carlo median",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/simulation_summary.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "combined_government_npv_p95",
+      "value": 10798.97682715813,
+      "unit": "usd",
+      "description": "Combined Government NPV per person, Monte Carlo p95",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/simulation_summary.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "societal_npv_per_person",
+      "value": 28324.745360194906,
+      "unit": "usd",
+      "description": "Societal net present value per person offered, Reference scenario, 2025 dollars",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/model_results.json",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "societal_bcr",
+      "value": 4.773971392337122,
+      "unit": "ratio",
+      "description": "Societal benefit-cost ratio, Reference scenario",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/model_results.json",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "societal_probability_npv_positive",
+      "value": 0.9808,
+      "unit": "proportion",
+      "description": "Share of Monte Carlo draws with positive societal net benefits",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/simulation_summary.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "societal_npv_p05",
+      "value": 4489.441407935377,
+      "unit": "usd",
+      "description": "Societal NPV per person, Monte Carlo p05",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/simulation_summary.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "societal_npv_median",
+      "value": 24609.83339345682,
+      "unit": "usd",
+      "description": "Societal NPV per person, Monte Carlo median",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/simulation_summary.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "societal_npv_p95",
+      "value": 68779.61325918867,
+      "unit": "usd",
+      "description": "Societal NPV per person, Monte Carlo p95",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/simulation_summary.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "conservative_participant_npv_per_person",
+      "value": 14900.84994270146,
+      "unit": "usd",
+      "description": "Participant NPV per person, Conservative scenario, 2025 dollars",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/model_results.json",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "conservative_participant_bcr",
+      "value": 3.288968106504529,
+      "unit": "ratio",
+      "description": "Participant benefit-cost ratio, Conservative scenario",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/model_results.json",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "conservative_utah_government_npv_per_person",
+      "value": -7440.824476195264,
+      "unit": "usd",
+      "description": "Utah Government NPV per person, Conservative scenario, 2025 dollars",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/model_results.json",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "conservative_utah_government_bcr",
+      "value": 0.11464143385809121,
+      "unit": "ratio",
+      "description": "Utah Government benefit-cost ratio, Conservative scenario",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/model_results.json",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "conservative_combined_government_npv_per_person",
+      "value": -3094.451419854311,
+      "unit": "usd",
+      "description": "Combined Government NPV per person, Conservative scenario, 2025 dollars",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/model_results.json",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "conservative_combined_government_bcr",
+      "value": 0.631801679929036,
+      "unit": "ratio",
+      "description": "Combined Government benefit-cost ratio, Conservative scenario",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/model_results.json",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "conservative_societal_npv_per_person",
+      "value": 11806.398522847148,
+      "unit": "usd",
+      "description": "Societal NPV per person, Conservative scenario, 2025 dollars",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/model_results.json",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "conservative_societal_bcr",
+      "value": 2.229281771270732,
+      "unit": "ratio",
+      "description": "Societal benefit-cost ratio, Conservative scenario",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/model_results.json",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "evidence_extension_participant_npv_per_person",
+      "value": 32010.08918939822,
+      "unit": "usd",
+      "description": "Participant NPV per person, Evidence Extension scenario, 2025 dollars",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/model_results.json",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "evidence_extension_participant_bcr",
+      "value": 4.160377358490566,
+      "unit": "ratio",
+      "description": "Participant benefit-cost ratio, Evidence Extension scenario",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/model_results.json",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "evidence_extension_utah_government_npv_per_person",
+      "value": -6229.77433562819,
+      "unit": "usd",
+      "description": "Utah Government NPV per person, Evidence Extension scenario, 2025 dollars",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/model_results.json",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "evidence_extension_utah_government_bcr",
+      "value": 0.18703849613119172,
+      "unit": "ratio",
+      "description": "Utah Government benefit-cost ratio, Evidence Extension scenario",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/model_results.json",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "evidence_extension_combined_government_npv_per_person",
+      "value": 2465.50362328297,
+      "unit": "usd",
+      "description": "Combined Government NPV per person, Evidence Extension scenario, 2025 dollars",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/model_results.json",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "evidence_extension_combined_government_bcr",
+      "value": 1.321738705993755,
+      "unit": "ratio",
+      "description": "Combined Government benefit-cost ratio, Evidence Extension scenario",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/model_results.json",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "evidence_extension_societal_npv_per_person",
+      "value": 34475.59281268119,
+      "unit": "usd",
+      "description": "Societal NPV per person, Evidence Extension scenario, 2025 dollars",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/model_results.json",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "evidence_extension_societal_bcr",
+      "value": 5.498931786257037,
+      "unit": "ratio",
+      "description": "Societal benefit-cost ratio, Evidence Extension scenario",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/model_results.json",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "break_even_program_cost_per_person",
+      "value": 35830.034196699344,
+      "unit": "usd",
+      "description": "Highest program cost per person at which societal NPV stays positive, Reference effects",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/model_results.json",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_provider_environment_utah_government_low_npv_per_person",
+      "value": -6665.172196923191,
+      "unit": "usd",
+      "description": "Utah Government NPV per person when provider environment is set to its low value (Towards Employment)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_provider_environment_utah_government_low_bcr",
+      "value": 0.11969569394266791,
+      "unit": "ratio",
+      "description": "Utah Government benefit-cost ratio when provider environment is at its low value",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_provider_environment_utah_government_high_npv_per_person",
+      "value": -3636.374568833463,
+      "unit": "usd",
+      "description": "Utah Government NPV per person when provider environment is set to its high value (Per Scholas)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_provider_environment_utah_government_high_bcr",
+      "value": 0.3639774793857087,
+      "unit": "ratio",
+      "description": "Utah Government benefit-cost ratio when provider environment is at its high value",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_provider_environment_societal_low_npv_per_person",
+      "value": 18126.316928526707,
+      "unit": "usd",
+      "description": "Societal NPV per person when provider environment is set to its low value (Towards Employment)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_provider_environment_societal_low_bcr",
+      "value": 3.394037899352093,
+      "unit": "ratio",
+      "description": "Societal benefit-cost ratio when provider environment is at its low value",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_provider_environment_societal_high_npv_per_person",
+      "value": 53290.346620066855,
+      "unit": "usd",
+      "description": "Societal NPV per person when provider environment is set to its high value (Per Scholas)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_provider_environment_societal_high_bcr",
+      "value": 10.320783637692541,
+      "unit": "ratio",
+      "description": "Societal benefit-cost ratio when provider environment is at its high value",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_effect_translation_utah_government_low_npv_per_person",
+      "value": -6557.590047994559,
+      "unit": "usd",
+      "description": "Utah Government NPV per person when retained earnings effect is set to its low value (0.75)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_effect_translation_utah_government_low_bcr",
+      "value": 0.12627079505593877,
+      "unit": "ratio",
+      "description": "Utah Government benefit-cost ratio when retained earnings effect is at its low value",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_effect_translation_utah_government_high_npv_per_person",
+      "value": -6115.330613356617,
+      "unit": "usd",
+      "description": "Utah Government NPV per person when retained earnings effect is set to its high value (1.1)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_effect_translation_utah_government_high_bcr",
+      "value": 0.18519716608204356,
+      "unit": "ratio",
+      "description": "Utah Government benefit-cost ratio when retained earnings effect is at its high value",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_effect_translation_societal_low_npv_per_person",
+      "value": 19367.23681102007,
+      "unit": "usd",
+      "description": "Societal NPV per person when retained earnings effect is set to its low value (0.75)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_effect_translation_societal_low_bcr",
+      "value": 3.5804785442528413,
+      "unit": "ratio",
+      "description": "Societal benefit-cost ratio when retained earnings effect is at its low value",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_effect_translation_societal_high_npv_per_person",
+      "value": 31907.74877986484,
+      "unit": "usd",
+      "description": "Societal NPV per person when retained earnings effect is set to its high value (1.1)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_effect_translation_societal_high_bcr",
+      "value": 5.251368531570835,
+      "unit": "ratio",
+      "description": "Societal benefit-cost ratio when retained earnings effect is at its high value",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_program_cost_utah_government_low_npv_per_person",
+      "value": -5115.897126348935,
+      "unit": "usd",
+      "description": "Utah Government NPV per person when program cost is set to its low value (0.85)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_program_cost_utah_government_low_bcr",
+      "value": 0.19807183538186476,
+      "unit": "ratio",
+      "description": "Utah Government benefit-cost ratio when program cost is at its low value",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_program_cost_utah_government_high_npv_per_person",
+      "value": -7367.483777300264,
+      "unit": "usd",
+      "description": "Utah Government NPV per person when program cost is set to its high value (1.15)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_program_cost_utah_government_high_bcr",
+      "value": 0.14640092180398703,
+      "unit": "ratio",
+      "description": "Utah Government benefit-cost ratio when program cost is at its high value",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_program_cost_societal_low_npv_per_person",
+      "value": 29450.538685670574,
+      "unit": "usd",
+      "description": "Societal NPV per person when program cost is set to its low value (0.85)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_program_cost_societal_low_bcr",
+      "value": 5.61643693216132,
+      "unit": "ratio",
+      "description": "Societal benefit-cost ratio when program cost is at its low value",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_program_cost_societal_high_npv_per_person",
+      "value": 27198.952034719245,
+      "unit": "usd",
+      "description": "Societal NPV per person when program cost is set to its high value (1.15)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_program_cost_societal_high_bcr",
+      "value": 4.1512794715974985,
+      "unit": "ratio",
+      "description": "Societal benefit-cost ratio when program cost is at its high value",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_discount_rate_utah_government_low_npv_per_person",
+      "value": -6033.1419307203705,
+      "unit": "usd",
+      "description": "Utah Government NPV per person when real discount rate is set to its low value (0)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_discount_rate_utah_government_low_bcr",
+      "value": 0.19614793485679013,
+      "unit": "ratio",
+      "description": "Utah Government benefit-cost ratio when real discount rate is at its low value",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_discount_rate_utah_government_high_npv_per_person",
+      "value": -6459.004639273608,
+      "unit": "usd",
+      "description": "Utah Government NPV per person when real discount rate is set to its high value (0.07)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_discount_rate_utah_government_high_bcr",
+      "value": 0.13940625337986756,
+      "unit": "ratio",
+      "description": "Utah Government benefit-cost ratio when real discount rate is at its high value",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_discount_rate_societal_low_npv_per_person",
+      "value": 34238.254536394874,
+      "unit": "usd",
+      "description": "Societal NPV per person when real discount rate is set to its low value (0)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_discount_rate_societal_low_bcr",
+      "value": 5.561883663939206,
+      "unit": "ratio",
+      "description": "Societal benefit-cost ratio when real discount rate is at its low value",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_discount_rate_societal_high_npv_per_person",
+      "value": 22162.68084497418,
+      "unit": "usd",
+      "description": "Societal NPV per person when real discount rate is set to its high value (0.07)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_discount_rate_societal_high_bcr",
+      "value": 3.9529417625046896,
+      "unit": "ratio",
+      "description": "Societal benefit-cost ratio when real discount rate is at its high value",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_fringe_rate_utah_government_low_npv_per_person",
+      "value": -6241.6904518246,
+      "unit": "usd",
+      "description": "Utah Government NPV per person when fringe benefit rate is set to its low value (0)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_fringe_rate_utah_government_low_bcr",
+      "value": 0.16836106007458507,
+      "unit": "ratio",
+      "description": "Utah Government benefit-cost ratio when fringe benefit rate is at its low value",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_fringe_rate_utah_government_high_npv_per_person",
+      "value": -6241.6904518246,
+      "unit": "usd",
+      "description": "Utah Government NPV per person when fringe benefit rate is set to its high value (0.323)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_fringe_rate_utah_government_high_bcr",
+      "value": 0.16836106007458507,
+      "unit": "ratio",
+      "description": "Utah Government benefit-cost ratio when fringe benefit rate is at its high value",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_fringe_rate_societal_low_npv_per_person",
+      "value": 20574.675267491915,
+      "unit": "usd",
+      "description": "Societal NPV per person when fringe benefit rate is set to its low value (0)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_fringe_rate_societal_low_bcr",
+      "value": 3.741356890546334,
+      "unit": "ratio",
+      "description": "Societal benefit-cost ratio when fringe benefit rate is at its low value",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_fringe_rate_societal_high_npv_per_person",
+      "value": 29644.50367308273,
+      "unit": "usd",
+      "description": "Societal NPV per person when fringe benefit rate is set to its high value (0.323)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_fringe_rate_societal_high_bcr",
+      "value": 4.949815166192799,
+      "unit": "ratio",
+      "description": "Societal benefit-cost ratio when fringe benefit rate is at its high value",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_participant_time_utah_government_low_npv_per_person",
+      "value": -6241.6904518246,
+      "unit": "usd",
+      "description": "Utah Government NPV per person when participant time cost is set to its low value (0)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_participant_time_utah_government_low_bcr",
+      "value": 0.16836106007458507,
+      "unit": "ratio",
+      "description": "Utah Government benefit-cost ratio when participant time cost is at its low value",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_participant_time_utah_government_high_npv_per_person",
+      "value": -6241.6904518246,
+      "unit": "usd",
+      "description": "Utah Government NPV per person when participant time cost is set to its high value (1200)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_participant_time_utah_government_high_bcr",
+      "value": 0.16836106007458507,
+      "unit": "ratio",
+      "description": "Utah Government benefit-cost ratio when participant time cost is at its high value",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_participant_time_societal_low_npv_per_person",
+      "value": 28324.745360194906,
+      "unit": "usd",
+      "description": "Societal NPV per person when participant time cost is set to its low value (0)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_participant_time_societal_low_bcr",
+      "value": 4.773971392337122,
+      "unit": "ratio",
+      "description": "Societal benefit-cost ratio when participant time cost is at its low value",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_participant_time_societal_high_npv_per_person",
+      "value": 27124.745360194906,
+      "unit": "usd",
+      "description": "Societal NPV per person when participant time cost is set to its high value (1200)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_participant_time_societal_high_bcr",
+      "value": 4.115892633734449,
+      "unit": "ratio",
+      "description": "Societal benefit-cost ratio when participant time cost is at its high value",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_completion_delivery_utah_government_low_npv_per_person",
+      "value": -6144.494590244627,
+      "unit": "usd",
+      "description": "Utah Government NPV per person when completion and delivery translation is set to its low value (45% completion, 0.50 outcome elasticity)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_completion_delivery_utah_government_low_bcr",
+      "value": 0.1592204495465406,
+      "unit": "ratio",
+      "description": "Utah Government benefit-cost ratio when completion and delivery translation is at its low value",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_completion_delivery_utah_government_high_npv_per_person",
+      "value": -6360.073206141344,
+      "unit": "usd",
+      "description": "Utah Government NPV per person when completion and delivery translation is set to its high value (60% completion, 0.25 outcome elasticity)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_completion_delivery_utah_government_high_bcr",
+      "value": 0.1700349964829016,
+      "unit": "ratio",
+      "description": "Utah Government benefit-cost ratio when completion and delivery translation is at its high value",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_completion_delivery_societal_low_npv_per_person",
+      "value": 25686.36823071347,
+      "unit": "usd",
+      "description": "Societal NPV per person when completion and delivery translation is set to its low value (45% completion, 0.50 outcome elasticity)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_completion_delivery_societal_low_bcr",
+      "value": 4.514784302697462,
+      "unit": "ratio",
+      "description": "Societal benefit-cost ratio when completion and delivery translation is at its low value",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_completion_delivery_societal_high_npv_per_person",
+      "value": 29283.906705345955,
+      "unit": "usd",
+      "description": "Societal NPV per person when completion and delivery translation is set to its high value (60% completion, 0.25 outcome elasticity)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_completion_delivery_societal_high_bcr",
+      "value": 4.821436789159609,
+      "unit": "ratio",
+      "description": "Societal benefit-cost ratio when completion and delivery translation is at its high value",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_federal_income_tax_utah_government_low_npv_per_person",
+      "value": -6241.6904518246,
+      "unit": "usd",
+      "description": "Utah Government NPV per person when federal income-tax rate is set to its low value (0.05)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_federal_income_tax_utah_government_low_bcr",
+      "value": 0.16836106007458507,
+      "unit": "ratio",
+      "description": "Utah Government benefit-cost ratio when federal income-tax rate is at its low value",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_federal_income_tax_utah_government_high_npv_per_person",
+      "value": -6241.6904518246,
+      "unit": "usd",
+      "description": "Utah Government NPV per person when federal income-tax rate is set to its high value (0.12)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_federal_income_tax_utah_government_high_bcr",
+      "value": 0.16836106007458507,
+      "unit": "ratio",
+      "description": "Utah Government benefit-cost ratio when federal income-tax rate is at its high value",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_federal_income_tax_societal_low_npv_per_person",
+      "value": 28324.745360194906,
+      "unit": "usd",
+      "description": "Societal NPV per person when federal income-tax rate is set to its low value (0.05)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_federal_income_tax_societal_low_bcr",
+      "value": 4.773971392337122,
+      "unit": "ratio",
+      "description": "Societal benefit-cost ratio when federal income-tax rate is at its low value",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_federal_income_tax_societal_high_npv_per_person",
+      "value": 28324.745360194906,
+      "unit": "usd",
+      "description": "Societal NPV per person when federal income-tax rate is set to its high value (0.12)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "sens_federal_income_tax_societal_high_bcr",
+      "value": 4.773971392337122,
+      "unit": "ratio",
+      "description": "Societal benefit-cost ratio when federal income-tax rate is at its high value",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/one_way_sensitivity.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "provider_per_scholas_program_cost_per_person",
+      "value": 5717.367626104392,
+      "unit": "usd",
+      "description": "Per Scholas net program cost per person, 2025 dollars",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/provider_scenario_results.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "provider_per_scholas_societal_npv_per_person",
+      "value": 53290.346620066855,
+      "unit": "usd",
+      "description": "Societal NPV per person using Per Scholas's own effects and cost",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/provider_scenario_results.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "provider_per_scholas_societal_bcr",
+      "value": 10.320783637692541,
+      "unit": "ratio",
+      "description": "Societal benefit-cost ratio using Per Scholas's own effects and cost",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/provider_scenario_results.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "provider_st_nicks_alliance_program_cost_per_person",
+      "value": 9651.183252228697,
+      "unit": "usd",
+      "description": "St. Nicks Alliance net program cost per person, 2025 dollars",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/provider_scenario_results.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "provider_st_nicks_alliance_societal_npv_per_person",
+      "value": 23773.656326381308,
+      "unit": "usd",
+      "description": "Societal NPV per person using St. Nicks Alliance's own effects and cost",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/provider_scenario_results.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "provider_st_nicks_alliance_societal_bcr",
+      "value": 3.4632892884809108,
+      "unit": "ratio",
+      "description": "Societal benefit-cost ratio using St. Nicks Alliance's own effects and cost",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/provider_scenario_results.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "provider_madison_strategies_group_program_cost_per_person",
+      "value": 7734.281570007108,
+      "unit": "usd",
+      "description": "Madison Strategies Group net program cost per person, 2025 dollars",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/provider_scenario_results.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "provider_madison_strategies_group_societal_npv_per_person",
+      "value": 20785.481949538258,
+      "unit": "usd",
+      "description": "Societal NPV per person using Madison Strategies Group's own effects and cost",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/provider_scenario_results.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "provider_madison_strategies_group_societal_bcr",
+      "value": 3.6874483119599115,
+      "unit": "ratio",
+      "description": "Societal benefit-cost ratio using Madison Strategies Group's own effects and cost",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/provider_scenario_results.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "provider_towards_employment_program_cost_per_person",
+      "value": 7571.441092654504,
+      "unit": "usd",
+      "description": "Towards Employment net program cost per person, 2025 dollars",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/provider_scenario_results.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "provider_towards_employment_societal_npv_per_person",
+      "value": 18126.316928526707,
+      "unit": "usd",
+      "description": "Societal NPV per person using Towards Employment's own effects and cost",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/provider_scenario_results.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "provider_towards_employment_societal_bcr",
+      "value": 3.394037899352093,
+      "unit": "ratio",
+      "description": "Societal benefit-cost ratio using Towards Employment's own effects and cost",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/provider_scenario_results.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "funding_utah_only_utah_npv_per_person",
+      "value": -6241.6904518246,
+      "unit": "usd",
+      "description": "Utah government NPV per person when utah funds the full program",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/funding_share_scenarios.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "funding_utah_only_federal_npv_per_person",
+      "value": 6542.631636231149,
+      "unit": "usd",
+      "description": "Federal government NPV per person when utah funds the full program",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/funding_share_scenarios.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "funding_utah_only_utah_bcr",
+      "value": 0.16836106007458507,
+      "unit": "ratio",
+      "description": "Utah government benefit-cost ratio when utah funds the full program",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/funding_share_scenarios.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "funding_utah_federal_equal_utah_npv_per_person",
+      "value": -2489.0460335723824,
+      "unit": "usd",
+      "description": "Utah government NPV per person when utah and federal government split the cost",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/funding_share_scenarios.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "funding_utah_federal_equal_federal_npv_per_person",
+      "value": 2789.9872179789304,
+      "unit": "usd",
+      "description": "Federal government NPV per person when utah and federal government split the cost",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/funding_share_scenarios.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "funding_utah_federal_equal_utah_bcr",
+      "value": 0.33672212014917013,
+      "unit": "ratio",
+      "description": "Utah government benefit-cost ratio when utah and federal government split the cost",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/funding_share_scenarios.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "funding_utah_federal_equal_federal_bcr",
+      "value": 1.7434723109945913,
+      "unit": "ratio",
+      "description": "Federal government benefit-cost ratio when utah and federal government split the cost",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/funding_share_scenarios.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "funding_public_employer_utah_npv_per_person",
+      "value": -1363.2527080967163,
+      "unit": "usd",
+      "description": "Utah government NPV per person when public funding with an employer contribution",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/funding_share_scenarios.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "funding_public_employer_federal_npv_per_person",
+      "value": 3165.2516598041525,
+      "unit": "usd",
+      "description": "Federal government NPV per person when public funding with an employer contribution",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/funding_share_scenarios.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "funding_public_employer_utah_bcr",
+      "value": 0.48103160021310026,
+      "unit": "ratio",
+      "description": "Utah government benefit-cost ratio when public funding with an employer contribution",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/funding_share_scenarios.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "funding_public_employer_federal_bcr",
+      "value": 1.9371914566606572,
+      "unit": "ratio",
+      "description": "Federal government benefit-cost ratio when public funding with an employer contribution",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/funding_share_scenarios.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "funding_public_first_loss_utah_npv_per_person",
+      "value": -1738.5171499219387,
+      "unit": "usd",
+      "description": "Utah government NPV per person when public funding with philanthropic first-loss support",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/funding_share_scenarios.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "funding_public_first_loss_federal_npv_per_person",
+      "value": 3540.516101629374,
+      "unit": "usd",
+      "description": "Federal government NPV per person when public funding with philanthropic first-loss support",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/funding_share_scenarios.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "funding_public_first_loss_utah_bcr",
+      "value": 0.42090265018646267,
+      "unit": "ratio",
+      "description": "Utah government benefit-cost ratio when public funding with philanthropic first-loss support",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/funding_share_scenarios.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "funding_public_first_loss_federal_bcr",
+      "value": 2.179340388743239,
+      "unit": "ratio",
+      "description": "Federal government benefit-cost ratio when public funding with philanthropic first-loss support",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/funding_share_scenarios.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "uncertainty_provider_environment_share",
+      "value": 0.5361798833393951,
+      "unit": "proportion",
+      "description": "Share of societal NPV variance explained by provider environment alone (screening diagnostic)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/uncertainty_contributions.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "uncertainty_early_effect_multiplier_share",
+      "value": 0.1807647865732694,
+      "unit": "proportion",
+      "description": "Share of societal NPV variance explained by years 1 through 6 effect multiplier alone (screening diagnostic)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/uncertainty_contributions.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "uncertainty_long_term_common_z_share",
+      "value": 0.1537195096494726,
+      "unit": "proportion",
+      "description": "Share of societal NPV variance explained by shared long-term effect shock alone (screening diagnostic)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/uncertainty_contributions.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "uncertainty_long_term_idiosyncratic_mean_z_share",
+      "value": 0.02339810280979157,
+      "unit": "proportion",
+      "description": "Share of societal NPV variance explained by idiosyncratic long-term effect shock alone (screening diagnostic)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/uncertainty_contributions.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "uncertainty_discount_rate_share",
+      "value": 0.0230082633839365,
+      "unit": "proportion",
+      "description": "Share of societal NPV variance explained by real discount rate alone (screening diagnostic)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/uncertainty_contributions.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "uncertainty_fringe_rate_share",
+      "value": 0.008445460391448877,
+      "unit": "proportion",
+      "description": "Share of societal NPV variance explained by fringe benefit rate alone (screening diagnostic)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/uncertainty_contributions.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "uncertainty_program_cost_shock_ratio_share",
+      "value": 0.007079605180678673,
+      "unit": "proportion",
+      "description": "Share of societal NPV variance explained by program cost shock alone (screening diagnostic)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/uncertainty_contributions.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "uncertainty_federal_income_tax_rate_share",
+      "value": 0.00018246629128304008,
+      "unit": "proportion",
+      "description": "Share of societal NPV variance explained by federal income-tax rate alone (screening diagnostic)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/uncertainty_contributions.csv",
+        "retrieved": null
+      }
+    },
+    {
+      "id": "uncertainty_completion_rate_share",
+      "value": 1.554433805292841e-05,
+      "unit": "proportion",
+      "description": "Share of societal NPV variance explained by completion rate alone (screening diagnostic)",
+      "source": {
+        "kind": "computed",
+        "ref": "studies/utah_roi/outputs/uncertainty_contributions.csv",
+        "retrieved": null
+      }
+    }
+  ]
+}
