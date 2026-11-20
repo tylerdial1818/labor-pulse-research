@@ -1,0 +1,3 @@
+case,combined_government_revenue_per_person,combined_government_npv_per_person,combined_government_bcr,employer_payroll_revenue_per_person,incidence_rule
+Reference incidence,7806.230020910984,300.94118440654876,1.0400972155718808,2148.117253955721,Employer payroll is deducted from participant compensation and credited to government
+Exclude employer payroll revenue,5658.112766955264,-1847.176069549172,0.7538834134450862,0,Diagnostic fiscal case that removes employer-side payroll revenue

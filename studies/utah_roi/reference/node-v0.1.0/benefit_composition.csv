@@ -1,0 +1,109 @@
+period,component,classification,cash_flow_per_person,discount_factor,pv_per_person,price_year,scenario
+0,Incremental earnings,resource benefit,0,1,0,2025,Reference
+1,Incremental earnings,resource benefit,393.81403293075243,0.970873786407767,382.34372129199267,2025,Reference
+2,Incremental earnings,resource benefit,4864.7713266111805,0.9425959091337544,4585.513551334886,2025,Reference
+3,Incremental earnings,resource benefit,4858.628288422373,0.9151416593531596,4446.333154047052,2025,Reference
+4,Incremental earnings,resource benefit,5257.632829018946,0.8884870479156888,4671.338671279655,2025,Reference
+5,Incremental earnings,resource benefit,3796.4109406458874,0.8626087843841639,3274.817426533289,2025,Reference
+6,Incremental earnings,resource benefit,2838.5296664929524,0.8374842566836542,2377.223907817351,2025,Reference
+7,Incremental earnings,resource benefit,2477.6274922538905,0.8130915113433536,2014.537882222559,2025,Reference
+8,Incremental earnings,resource benefit,3124.8815106833895,0.7894092343139355,2466.8103206703486,2025,Reference
+9,Incremental earnings,resource benefit,2894.7549960227957,0.7664167323436267,2218.588664987179,2025,Reference
+10,Incremental earnings,resource benefit,2207.324601008195,0.7440939148967249,1642.456803812039,2025,Reference
+Total,Incremental earnings,resource benefit,32714.37568409036,,28079.964103996346,2025,Reference
+0,Fringe benefits,resource benefit,0,1,0,2025,Reference
+1,Fringe benefits,resource benefit,108.69267308888767,0.970873786407767,105.52686707658998,2025,Reference
+2,Fringe benefits,resource benefit,1342.676886144686,0.9425959091337544,1265.6017401684287,2025,Reference
+3,Fringe benefits,resource benefit,1340.9814076045752,0.9151416593531596,1227.1879505169866,2025,Reference
+4,Fringe benefits,resource benefit,1451.1066608092292,0.8884870479156888,1289.2894732731847,2025,Reference
+5,Fringe benefits,resource benefit,1047.809419618265,0.8626087843841639,903.849609723188,2025,Reference
+6,Fringe benefits,resource benefit,783.4341879520549,0.8374842566836542,656.113798557589,2025,Reference
+7,Fringe benefits,resource benefit,683.8251878620739,0.8130915113433536,556.0124554934264,2025,Reference
+8,Fringe benefits,resource benefit,862.4672969486156,0.7894092343139355,680.8396485050163,2025,Reference
+9,Fringe benefits,resource benefit,798.9523789022918,0.7664167323436267,612.3304715364616,2025,Reference
+10,Fringe benefits,resource benefit,609.2215898782619,0.7440939148967249,453.3180778521228,2025,Reference
+Total,Fringe benefits,resource benefit,9029.16768880894,,7750.070092702993,2025,Reference
+0,Federal income tax,fiscal transfer,0,1,0,2025,Reference
+1,Federal income tax,fiscal transfer,31.505122634460196,0.970873786407767,30.587497703359414,2025,Reference
+2,Federal income tax,fiscal transfer,389.18170612889446,0.9425959091337544,366.8410841067909,2025,Reference
+3,Federal income tax,fiscal transfer,388.6902630737898,0.9151416593531596,355.70665232376416,2025,Reference
+4,Federal income tax,fiscal transfer,420.61062632151567,0.8884870479156888,373.70709370237233,2025,Reference
+5,Federal income tax,fiscal transfer,303.712875251671,0.8626087843841639,261.98539412266314,2025,Reference
+6,Federal income tax,fiscal transfer,227.08237331943621,0.8374842566836542,190.1779126253881,2025,Reference
+7,Federal income tax,fiscal transfer,198.21019938031128,0.8130915113433536,161.16303057780473,2025,Reference
+8,Federal income tax,fiscal transfer,249.99052085467116,0.7894092343139355,197.34482565362788,2025,Reference
+9,Federal income tax,fiscal transfer,231.58039968182368,0.7664167323436267,177.48709319897435,2025,Reference
+10,Federal income tax,fiscal transfer,176.58596808065562,0.7440939148967249,131.39654430496316,2025,Reference
+Total,Federal income tax,fiscal transfer,2617.150054727229,,2246.3971283197084,2025,Reference
+0,Utah income tax,fiscal transfer,0,1,0,2025,Reference
+1,Utah income tax,fiscal transfer,17.721631481883858,0.970873786407767,17.20546745813967,2025,Reference
+2,Utah income tax,fiscal transfer,218.91470969750313,0.9425959091337544,206.34810981006987,2025,Reference
+3,Utah income tax,fiscal transfer,218.63827297900679,0.9151416593531596,200.08499193211736,2025,Reference
+4,Utah income tax,fiscal transfer,236.59347730585256,0.8884870479156888,210.21024020758446,2025,Reference
+5,Utah income tax,fiscal transfer,170.83849232906493,0.8626087843841639,147.366784193998,2025,Reference
+6,Utah income tax,fiscal transfer,127.73383499218286,0.8374842566836542,106.9750758517808,2025,Reference
+7,Utah income tax,fiscal transfer,111.49323715142508,0.8130915113433536,90.65420470001516,2025,Reference
+8,Utah income tax,fiscal transfer,140.6196679807525,0.7894092343139355,111.00646443016566,2025,Reference
+9,Utah income tax,fiscal transfer,130.2639748210258,0.7664167323436267,99.83648992442308,2025,Reference
+10,Utah income tax,fiscal transfer,99.32960704536877,0.7440939148967249,73.91055617154176,2025,Reference
+Total,Utah income tax,fiscal transfer,1472.1469057840661,,1263.5983846798358,2025,Reference
+0,Employee payroll tax,fiscal transfer,0,1,0,2025,Reference
+1,Employee payroll tax,fiscal transfer,30.126773519202562,0.970873786407767,29.24929467883744,2025,Reference
+2,Employee payroll tax,fiscal transfer,372.15500648575534,0.9425959091337544,350.7917866771188,2025,Reference
+3,Employee payroll tax,fiscal transfer,371.6850640643116,0.9151416593531596,340.1444862845995,2025,Reference
+4,Employee payroll tax,fiscal transfer,402.20891141994935,0.8884870479156888,357.3574083528936,2025,Reference
+5,Employee payroll tax,fiscal transfer,290.4254369594104,0.8626087843841639,250.52353312979662,2025,Reference
+6,Employee payroll tax,fiscal transfer,217.14751948671088,0.8374842566836542,181.85762894802738,2025,Reference
+7,Employee payroll tax,fiscal transfer,189.53850315742264,0.8130915113433536,154.11214799002576,2025,Reference
+8,Employee payroll tax,fiscal transfer,239.05343556727928,0.7894092343139355,188.71098953128165,2025,Reference
+9,Employee payroll tax,fiscal transfer,221.44875719574387,0.7664167323436267,169.72203287151922,2025,Reference
+10,Employee payroll tax,fiscal transfer,168.86033197712692,0.7440939148967249,125.647945491621,2025,Reference
+Total,Employee payroll tax,fiscal transfer,2502.649739832913,,2148.117253955721,2025,Reference
+0,Employer payroll tax,fiscal transfer,0,1,0,2025,Reference
+1,Employer payroll tax,fiscal transfer,30.126773519202562,0.970873786407767,29.24929467883744,2025,Reference
+2,Employer payroll tax,fiscal transfer,372.15500648575534,0.9425959091337544,350.7917866771188,2025,Reference
+3,Employer payroll tax,fiscal transfer,371.6850640643116,0.9151416593531596,340.1444862845995,2025,Reference
+4,Employer payroll tax,fiscal transfer,402.20891141994935,0.8884870479156888,357.3574083528936,2025,Reference
+5,Employer payroll tax,fiscal transfer,290.4254369594104,0.8626087843841639,250.52353312979662,2025,Reference
+6,Employer payroll tax,fiscal transfer,217.14751948671088,0.8374842566836542,181.85762894802738,2025,Reference
+7,Employer payroll tax,fiscal transfer,189.53850315742264,0.8130915113433536,154.11214799002576,2025,Reference
+8,Employer payroll tax,fiscal transfer,239.05343556727928,0.7894092343139355,188.71098953128165,2025,Reference
+9,Employer payroll tax,fiscal transfer,221.44875719574387,0.7664167323436267,169.72203287151922,2025,Reference
+10,Employer payroll tax,fiscal transfer,168.86033197712692,0.7440939148967249,125.647945491621,2025,Reference
+Total,Employer payroll tax,fiscal transfer,2502.649739832913,,2148.117253955721,2025,Reference
+0,Transfer offset,fiscal transfer,0,1,0,2025,Reference
+1,Transfer offset,fiscal transfer,0,0.970873786407767,0,2025,Reference
+2,Transfer offset,fiscal transfer,0,0.9425959091337544,0,2025,Reference
+3,Transfer offset,fiscal transfer,0,0.9151416593531596,0,2025,Reference
+4,Transfer offset,fiscal transfer,0,0.8884870479156888,0,2025,Reference
+5,Transfer offset,fiscal transfer,0,0.8626087843841639,0,2025,Reference
+6,Transfer offset,fiscal transfer,0,0.8374842566836542,0,2025,Reference
+7,Transfer offset,fiscal transfer,0,0.8130915113433536,0,2025,Reference
+8,Transfer offset,fiscal transfer,0,0.7894092343139355,0,2025,Reference
+9,Transfer offset,fiscal transfer,0,0.7664167323436267,0,2025,Reference
+10,Transfer offset,fiscal transfer,0,0.7440939148967249,0,2025,Reference
+Total,Transfer offset,fiscal transfer,0,,0,2025,Reference
+0,Program cost,resource cost,7505.288836504436,1,7505.288836504436,2025,Reference
+1,Program cost,resource cost,0,0.970873786407767,0,2025,Reference
+2,Program cost,resource cost,0,0.9425959091337544,0,2025,Reference
+3,Program cost,resource cost,0,0.9151416593531596,0,2025,Reference
+4,Program cost,resource cost,0,0.8884870479156888,0,2025,Reference
+5,Program cost,resource cost,0,0.8626087843841639,0,2025,Reference
+6,Program cost,resource cost,0,0.8374842566836542,0,2025,Reference
+7,Program cost,resource cost,0,0.8130915113433536,0,2025,Reference
+8,Program cost,resource cost,0,0.7894092343139355,0,2025,Reference
+9,Program cost,resource cost,0,0.7664167323436267,0,2025,Reference
+10,Program cost,resource cost,0,0.7440939148967249,0,2025,Reference
+Total,Program cost,resource cost,7505.288836504436,,7505.288836504436,2025,Reference
+0,Participant time,resource cost,0,1,0,2025,Reference
+1,Participant time,resource cost,0,0.970873786407767,0,2025,Reference
+2,Participant time,resource cost,0,0.9425959091337544,0,2025,Reference
+3,Participant time,resource cost,0,0.9151416593531596,0,2025,Reference
+4,Participant time,resource cost,0,0.8884870479156888,0,2025,Reference
+5,Participant time,resource cost,0,0.8626087843841639,0,2025,Reference
+6,Participant time,resource cost,0,0.8374842566836542,0,2025,Reference
+7,Participant time,resource cost,0,0.8130915113433536,0,2025,Reference
+8,Participant time,resource cost,0,0.7894092343139355,0,2025,Reference
+9,Participant time,resource cost,0,0.7664167323436267,0,2025,Reference
+10,Participant time,resource cost,0,0.7440939148967249,0,2025,Reference
+Total,Participant time,resource cost,0,,0,2025,Reference

@@ -6,41 +6,18 @@ can be compared directly, plus a `facts.json` for the research-note verifier.
 
 from __future__ import annotations
 
-import csv
 import json
-import math
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
 from lpresearch.facts import Fact, FactSheet, Source
-from lpresearch.pipelines.utah_roi import model
+from lpresearch.io import write_csv
+from lpresearch.pipelines.utah_roi import model, sensitivity
 
 MODEL_VERSION = "0.1.0"
 STUDY = "utah_roi"
 STUDY_DIR = Path(__file__).resolve().parents[4] / "studies" / STUDY
-
-
-def format_value(value: Any) -> str:
-    """Render a value the way JavaScript's String() does for the numbers this model emits."""
-    if value is None:
-        return ""
-    if isinstance(value, bool):
-        return "true" if value else "false"
-    if isinstance(value, float):
-        if math.isfinite(value) and value.is_integer() and abs(value) < 1e21:
-            return str(int(value))
-        return repr(value)
-    return str(value)
-
-
-def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
-    columns = list(rows[0].keys()) if rows else []
-    with path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.writer(handle, lineterminator="\n")
-        writer.writerow(columns)
-        for row in rows:
-            writer.writerow([format_value(row.get(c)) for c in columns])
 
 
 def run(study_dir: Path = STUDY_DIR, out_dir: Path | None = None, draws: int | None = None) -> dict[str, Any]:
@@ -84,6 +61,9 @@ def run(study_dir: Path = STUDY_DIR, out_dir: Path | None = None, draws: int | N
     write_csv(out_dir / "annual_cash_flows_reference.csv", reference["annual_cash_flows"])
     write_csv(out_dir / "simulation_draws_reference.csv", simulation["draws"])
     write_csv(out_dir / "simulation_summary.csv", simulation["summary"])
+    report_tables = sensitivity.build_report_tables(study_dir, inputs, evidence, simulation["draws"])
+    for name, rows in report_tables.items():
+        write_csv(out_dir / name, rows)
 
     summary = {row["perspective"]: row for row in simulation["summary"]}
     per = reference["perspectives"]
@@ -114,7 +94,7 @@ def run(study_dir: Path = STUDY_DIR, out_dir: Path | None = None, draws: int | N
         },
     }
     (out_dir / "model_results.json").write_text(json.dumps(results, indent=2) + "\n", encoding="utf-8")
-    build_facts(results, reference, summary).write(out_dir / "facts.json")
+    build_facts(results, reference, summary, report_tables).write(out_dir / "facts.json")
     return results
 
 
@@ -126,7 +106,16 @@ _PERSPECTIVE_SLUGS = {
 }
 
 
-def build_facts(results: dict[str, Any], reference: dict[str, Any], summary: dict[str, dict]) -> FactSheet:
+def _slug(text: str) -> str:
+    return "".join(c if c.isalnum() else "_" for c in text.lower()).strip("_").replace("__", "_")
+
+
+def build_facts(
+    results: dict[str, Any],
+    reference: dict[str, Any],
+    summary: dict[str, dict],
+    report_tables: dict[str, list[dict[str, Any]]],
+) -> FactSheet:
     """Every number a Utah ROI research note may quote, with where it came from."""
     sheet = FactSheet(study=STUDY, model_version=MODEL_VERSION)
     det = Source(kind="computed", ref=f"studies/{STUDY}/outputs/model_results.json")
@@ -197,4 +186,89 @@ def build_facts(results: dict[str, Any], reference: dict[str, Any], summary: dic
                     "ratio",
                     f"{name} benefit-cost ratio, {row['scenario']} scenario",
                 )
+    _add_report_facts(add, reference, report_tables)
     return sheet
+
+
+def _add_report_facts(add, reference: dict[str, Any], tables: dict[str, list[dict[str, Any]]]) -> None:
+    """Facts from the sensitivity and report tables, limited to what a note is likely to quote."""
+
+    def src(name: str) -> Source:
+        return Source(kind="computed", ref=f"studies/{STUDY}/outputs/{name}")
+
+    add(
+        "break_even_program_cost_per_person",
+        reference["break_even"]["societal_program_cost_per_person"],
+        "usd",
+        "Highest program cost per person at which societal NPV stays positive, Reference effects",
+    )
+    for row in tables["one_way_sensitivity.csv"]:
+        if row["perspective"] not in ("Societal", "Utah Government"):
+            continue
+        base = f"sens_{row['sensitivity_id']}_{_PERSPECTIVE_SLUGS[row['perspective']]}"
+        for side in ("low", "high"):
+            add(
+                f"{base}_{side}_npv_per_person",
+                row[f"{side}_npv_per_person"],
+                "usd",
+                f"{row['perspective']} NPV per person when {row['label'].lower()} is set to its {side} value "
+                f"({row[f'{side}_label']})",
+                src("one_way_sensitivity.csv"),
+            )
+            if row[f"{side}_bcr"] is not None:
+                add(
+                    f"{base}_{side}_bcr",
+                    row[f"{side}_bcr"],
+                    "ratio",
+                    f"{row['perspective']} benefit-cost ratio when {row['label'].lower()} is at its {side} value",
+                    src("one_way_sensitivity.csv"),
+                )
+    for row in tables["provider_scenario_results.csv"]:
+        if row["perspective"] != "Societal":
+            continue
+        slug = _slug(row["provider"])
+        add(
+            f"provider_{slug}_program_cost_per_person",
+            row["program_cost_per_person"],
+            "usd",
+            f"{row['provider']} net program cost per person, 2025 dollars",
+            src("provider_scenario_results.csv"),
+        )
+        add(
+            f"provider_{slug}_societal_npv_per_person",
+            row["npv_per_person"],
+            "usd",
+            f"Societal NPV per person using {row['provider']}'s own effects and cost",
+            src("provider_scenario_results.csv"),
+        )
+        add(
+            f"provider_{slug}_societal_bcr",
+            row["benefit_cost_ratio"],
+            "ratio",
+            f"Societal benefit-cost ratio using {row['provider']}'s own effects and cost",
+            src("provider_scenario_results.csv"),
+        )
+    for row in tables["funding_share_scenarios.csv"]:
+        sid = row["scenario_id"]
+        for key, unit, what in (
+            ("utah_npv_per_person", "usd", "Utah government NPV per person"),
+            ("federal_npv_per_person", "usd", "Federal government NPV per person"),
+            ("utah_bcr", "ratio", "Utah government benefit-cost ratio"),
+            ("federal_bcr", "ratio", "Federal government benefit-cost ratio"),
+        ):
+            if row[key] != "":
+                add(
+                    f"funding_{sid}_{key}",
+                    row[key],
+                    unit,
+                    f"{what} when {row['label'][0].lower()}{row['label'][1:]}",
+                    src("funding_share_scenarios.csv"),
+                )
+    for row in tables["uncertainty_contributions.csv"]:
+        add(
+            f"uncertainty_{row['factor_id']}_share",
+            row["diagnostic_share_of_variance"],
+            "proportion",
+            f"Share of societal NPV variance explained by {row['label'].lower()} alone (screening diagnostic)",
+            src("uncertainty_contributions.csv"),
+        )

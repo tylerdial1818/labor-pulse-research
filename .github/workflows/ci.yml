@@ -22,3 +22,5 @@ jobs:
         run: ruff check . && ruff format --check .
       - name: Test (includes full 10,000-draw parity check)
         run: pytest -q
+      - name: Check research notes
+        run: lpresearch check-notes

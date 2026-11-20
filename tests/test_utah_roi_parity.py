@@ -52,6 +52,14 @@ def assert_cells_match(actual, expected, where):
         "annual_cash_flows_reference.csv",
         "simulation_summary.csv",
         "simulation_draws_reference.csv",
+        "one_way_sensitivity.csv",
+        "funding_share_scenarios.csv",
+        "fiscal_incidence_sensitivity.csv",
+        "break_even_frontier.csv",
+        "benefit_composition.csv",
+        "provider_scenario_results.csv",
+        "uncertainty_contributions.csv",
+        "occupation_rank_stability.csv",
     ],
 )
 def test_csv_outputs_match_node(outputs, name):

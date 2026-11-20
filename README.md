@@ -10,7 +10,9 @@ Each study is a Python pipeline that reads versioned inputs and writes its outpu
 src/lpresearch/
   facts.py              facts.json schema: id, value, unit, description, source
   verify_numbers.py     checks every number in a note against the facts
-  cli.py                `lpresearch run <study>` and `lpresearch verify`
+  notes.py              sets up note folders and checks notes against their facts
+  studies.py            registry of studies and their background docs
+  cli.py                `lpresearch run | facts | verify | new-note | check-notes`
   pipelines/utah_roi/   Utah Workforce ROI benefit-cost model
 studies/utah_roi/
   model/                parameter registry and scenario definitions
@@ -18,7 +20,11 @@ studies/utah_roi/
   data/                 processed Utah labor-market and CPI inputs
   docs/                 protocol, model card, data dictionary, citation
   reference/node-v0.1.0 outputs of the original Node.js model, used as the parity baseline
-tests/                  model invariants, Node parity, number verifier
+notes/<study>/<date>-<slug>/
+  note.md               the note, with front matter (byline, status, model version)
+  facts.json            the facts snapshot it was written from
+docs/                   how notes are written, and the note style guide
+tests/                  model invariants, Node parity, sensitivity, verifier, note checks
 ```
 
 ## Quick start
@@ -32,11 +38,17 @@ pytest
 
 The package uses only the Python standard library at runtime.
 
+## Writing a note
+
+Notes are drafted by Claude in a LaborPulse project thread, with no API calls or API key. Each note gets its own folder with a snapshot of the facts it was written from, `lpresearch verify` must pass before the pull request opens, and the pull request is the editorial review. The full steps are in [docs/writing-notes.md](docs/writing-notes.md) and the house style is in [docs/note-style.md](docs/note-style.md).
+
+CI runs `lpresearch check-notes` on every pull request: each note must pass the number check against its snapshot, and every snapshot value must still equal what the pipeline computes today. Changing the model therefore flags every note whose numbers moved.
+
 ## Studies
 
 ### Utah Workforce ROI (v0.1.0)
 
-A benefit-cost model of WorkAdvance-style sector training for a Utah cohort, from participant, Utah government, combined government and societal perspectives. Values are intent-to-treat per person offered, in 2025 dollars, over a 10-year horizon at a 3% real discount rate, with a seeded 10,000-draw Monte Carlo. See `studies/utah_roi/docs/` for the protocol and model card.
+A benefit-cost model of WorkAdvance-style sector training for a Utah cohort, from participant, Utah government, combined government and societal perspectives. Values are intent-to-treat per person offered, in 2025 dollars, over a 10-year horizon at a 3% real discount rate, with a seeded 10,000-draw Monte Carlo. See `studies/utah_roi/docs/` for the protocol and model card. Besides the core results, the pipeline writes the report tables: one-way sensitivity, funding-share scenarios, fiscal incidence, the break-even frontier, benefit composition, provider results, Monte Carlo uncertainty screening and occupation rank stability.
 
 The Python model is a direct port of the original Node.js `model_core.mjs`. `tests/test_utah_roi_parity.py` reruns all of it, including every simulation draw, and requires agreement with the Node outputs to within 1e-9 relative. The random number generator (Mulberry32) and the inverse-normal approximation are reimplemented exactly rather than swapped for NumPy or SciPy so that the seeded draws stay identical.
 
