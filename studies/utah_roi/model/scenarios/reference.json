@@ -1,0 +1,5 @@
+{
+  "scenario": "Reference",
+  "description": "Evidence-anchored ITT case with no mechanical local wage scaling, benchmark completion, 3% discounting, MDRC fringe benefits, and no unsupported transfers or participant time cost.",
+  "column": "base_value"
+}
