@@ -1,0 +1,125 @@
+{
+  "version": "0.1.0",
+  "last_updated": "2026-07-17",
+  "one_way_sensitivity": [
+    {
+      "sensitivity_id": "provider_environment",
+      "label": "Provider environment",
+      "kind": "empirical_sites",
+      "source_basis": "Observed WorkAdvance provider effect and cost paths"
+    },
+    {
+      "sensitivity_id": "effect_translation",
+      "label": "Retained earnings effect",
+      "kind": "parameter",
+      "parameter_id": "WAGE_TRANSLATION_FACTOR",
+      "low": 0.75,
+      "high": 1.10,
+      "unit": "multiplier",
+      "source_basis": "Transparent report stress range around the reference causal path"
+    },
+    {
+      "sensitivity_id": "program_cost",
+      "label": "Program cost",
+      "kind": "parameter",
+      "parameter_id": "COST_MULTIPLIER",
+      "low": 0.85,
+      "high": 1.15,
+      "unit": "multiplier",
+      "source_basis": "Plus or minus 15 percent cost stress around the evidence-weighted reference cost"
+    },
+    {
+      "sensitivity_id": "discount_rate",
+      "label": "Real discount rate",
+      "kind": "parameter",
+      "parameter_id": "DISCOUNT_RATE",
+      "low": 0,
+      "high": 0.07,
+      "unit": "proportion",
+      "source_basis": "Registered Monte Carlo range and conservative scenario"
+    },
+    {
+      "sensitivity_id": "fringe_rate",
+      "label": "Fringe benefit rate",
+      "kind": "parameter",
+      "parameter_id": "FRINGE_RATE",
+      "low": 0,
+      "high": 0.323,
+      "unit": "proportion",
+      "source_basis": "Conservative exclusion and registered evidence-extension value"
+    },
+    {
+      "sensitivity_id": "participant_time",
+      "label": "Participant time cost",
+      "kind": "parameter",
+      "parameter_id": "PARTICIPANT_TIME_COST",
+      "low": 0,
+      "high": 1200,
+      "unit": "USD_2025_per_person",
+      "source_basis": "Reference and conservative structural scenarios"
+    },
+    {
+      "sensitivity_id": "completion_delivery",
+      "label": "Completion and delivery translation",
+      "kind": "completion_composite",
+      "low_completion": 0.45,
+      "low_outcome_elasticity": 0.50,
+      "high_completion": 0.60,
+      "high_outcome_elasticity": 0.25,
+      "unit": "composite",
+      "source_basis": "Registered conservative and evidence-extension completion assumptions"
+    },
+    {
+      "sensitivity_id": "federal_income_tax",
+      "label": "Federal income-tax rate",
+      "kind": "parameter",
+      "parameter_id": "FEDERAL_INCOME_TAX_RATE",
+      "low": 0.05,
+      "high": 0.12,
+      "unit": "proportion",
+      "source_basis": "Registered conservative and evidence-extension values"
+    }
+  ],
+  "funding_share_scenarios": [
+    {
+      "scenario_id": "utah_only",
+      "label": "Utah funds the full program",
+      "utah_share": 1,
+      "federal_share": 0,
+      "employer_share": 0,
+      "philanthropic_share": 0
+    },
+    {
+      "scenario_id": "utah_federal_equal",
+      "label": "Utah and federal government split the cost",
+      "utah_share": 0.5,
+      "federal_share": 0.5,
+      "employer_share": 0,
+      "philanthropic_share": 0
+    },
+    {
+      "scenario_id": "public_employer",
+      "label": "Public funding with an employer contribution",
+      "utah_share": 0.35,
+      "federal_share": 0.45,
+      "employer_share": 0.2,
+      "philanthropic_share": 0
+    },
+    {
+      "scenario_id": "public_first_loss",
+      "label": "Public funding with philanthropic first-loss support",
+      "utah_share": 0.4,
+      "federal_share": 0.4,
+      "employer_share": 0,
+      "philanthropic_share": 0.2
+    }
+  ],
+  "break_even_grid": {
+    "effect_retention_min": 0,
+    "effect_retention_max": 1.25,
+    "effect_retention_step": 0.05,
+    "program_cost_min": 0,
+    "program_cost_max": 20000,
+    "program_cost_step": 500
+  }
+}

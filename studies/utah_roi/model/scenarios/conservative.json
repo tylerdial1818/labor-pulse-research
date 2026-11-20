@@ -1,0 +1,5 @@
+{
+  "scenario": "Conservative",
+  "description": "Stress case with 15% higher program cost, 45% completion, partial completion-to-outcome translation, no fringe benefits, $1,200 participant time cost, and 7% discounting.",
+  "column": "conservative_value"
+}

@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this open research model, cite it as follows."
+title: "Utah Workforce ROI Model"
+type: software
+authors:
+  - family-names: Dial
+    given-names: Tyler
+version: 0.1.0
+date-released: 2026-07-16
+license: MIT
