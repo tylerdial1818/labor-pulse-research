@@ -12,7 +12,6 @@ requires-python = ">=3.11"
 dependencies = []
 
 [project.optional-dependencies]
-draft = ["anthropic>=2.12,<3"]
 dev = ["pytest>=8", "ruff>=0.6"]
 
 [project.scripts]

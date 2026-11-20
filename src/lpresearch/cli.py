@@ -2,7 +2,7 @@
 
 lpresearch run utah-roi                 run a pipeline
 lpresearch verify --facts F note.md     check numbers in any Markdown file
-lpresearch draft utah-roi --topic "..." draft a note with Claude (needs ANTHROPIC_API_KEY)
+lpresearch new-note utah-roi --title "..." set up a note folder with its facts snapshot
 lpresearch check-notes                  what CI runs on notes/
 """
 
@@ -50,21 +50,19 @@ def _verify(args: argparse.Namespace) -> int:
     return 1 if failures else 0
 
 
-def _draft(args: argparse.Namespace) -> int:
-    import anthropic
-
+def _new_note(args: argparse.Namespace) -> int:
     from lpresearch import notes
 
     study = studies.get(args.study)
-    facts = study.compute_facts()
-    result = notes.draft_note(
-        anthropic.Anthropic(), facts, args.topic, study.context(), max_revisions=args.max_revisions
-    )
-    folder = notes.write_note(result, facts, args.topic, Path(args.notes_dir))
+    folder = notes.new_note(study.compute_facts(), args.title, args.topic or args.title, Path(args.notes_dir))
     print(folder)
-    if not result.ok:
-        print("Numbers still not backed by facts: " + ", ".join(m.text for m in result.unverified), file=sys.stderr)
-        return 2
+    return 0
+
+
+def _facts(args: argparse.Namespace) -> int:
+    """Print a study's facts as a readable table, for whoever is writing a note."""
+    for fact in studies.get(args.study).compute_facts().facts:
+        print(f"{fact.id:<60} {fact.value:>18.6g}  {fact.unit:<10} {fact.description}")
     return 0
 
 
@@ -98,12 +96,16 @@ def main(argv: list[str] | None = None) -> int:
     ver_p.add_argument("-v", "--verbose", action="store_true")
     ver_p.set_defaults(func=_verify)
 
-    draft_p = sub.add_parser("draft", help="draft a research note with Claude")
-    draft_p.add_argument("study")
-    draft_p.add_argument("--topic", required=True, help="what the note should explain")
-    draft_p.add_argument("--max-revisions", type=int, default=2)
-    draft_p.add_argument("--notes-dir", default=str(studies.REPO / "notes"))
-    draft_p.set_defaults(func=_draft)
+    new_p = sub.add_parser("new-note", help="set up a note folder with its facts snapshot")
+    new_p.add_argument("study")
+    new_p.add_argument("--title", required=True)
+    new_p.add_argument("--topic", help="what the note should explain (default: the title)")
+    new_p.add_argument("--notes-dir", default=str(studies.REPO / "notes"))
+    new_p.set_defaults(func=_new_note)
+
+    facts_p = sub.add_parser("facts", help="list the facts a study produces")
+    facts_p.add_argument("study")
+    facts_p.set_defaults(func=_facts)
 
     check_p = sub.add_parser("check-notes", help="verify every note and its facts snapshot")
     check_p.add_argument("--notes-dir", default=str(studies.REPO / "notes"))

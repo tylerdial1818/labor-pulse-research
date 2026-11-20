@@ -10,9 +10,9 @@ Each study is a Python pipeline that reads versioned inputs and writes its outpu
 src/lpresearch/
   facts.py              facts.json schema: id, value, unit, description, source
   verify_numbers.py     checks every number in a note against the facts
-  notes.py              drafts notes with Claude and checks them against their facts
-  studies.py            registry of studies and the background docs a note writer gets
-  cli.py                `lpresearch run | verify | draft | check-notes`
+  notes.py              sets up note folders and checks notes against their facts
+  studies.py            registry of studies and their background docs
+  cli.py                `lpresearch run | facts | verify | new-note | check-notes`
   pipelines/utah_roi/   Utah Workforce ROI benefit-cost model
 studies/utah_roi/
   model/                parameter registry and scenario definitions
@@ -23,7 +23,8 @@ studies/utah_roi/
 notes/<study>/<date>-<slug>/
   note.md               the note, with front matter (byline, status, model version)
   facts.json            the facts snapshot it was written from
-tests/                  model invariants, Node parity, sensitivity, verifier, note drafting
+docs/                   how notes are written, and the note style guide
+tests/                  model invariants, Node parity, sensitivity, verifier, note checks
 ```
 
 ## Quick start
@@ -35,17 +36,13 @@ lpresearch verify --facts studies/utah_roi/outputs/facts.json note.md
 pytest
 ```
 
-The pipelines use only the Python standard library. Drafting notes needs the `draft` extra (`pip install -e ".[draft]"`) and an `ANTHROPIC_API_KEY`.
+The package uses only the Python standard library at runtime.
 
 ## Writing a note
 
-1. Run the **Draft research note** workflow in GitHub Actions, choose a study and describe the topic.
-2. The workflow runs the pipeline, Claude drafts the note from its `facts.json`, and the number check runs. If a number has no matching fact, the draft goes back to Claude with the list, up to two times.
-3. A pull request opens with the note and its facts snapshot. Review the interpretation, caveats and tone, edit freely, and merge to publish.
+Notes are drafted by Claude in a LaborPulse project thread, with no API calls or API key. Each note gets its own folder with a snapshot of the facts it was written from, `lpresearch verify` must pass before the pull request opens, and the pull request is the editorial review. The full steps are in [docs/writing-notes.md](docs/writing-notes.md) and the house style is in [docs/note-style.md](docs/note-style.md).
 
 CI runs `lpresearch check-notes` on every pull request: each note must pass the number check against its snapshot, and every snapshot value must still equal what the pipeline computes today. Changing the model therefore flags every note whose numbers moved.
-
-Locally: `lpresearch draft utah-roi --topic "What Utah gets back from sector training"`.
 
 ## Studies
 
