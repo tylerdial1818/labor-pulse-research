@@ -524,8 +524,14 @@ def simulate_reference(
     inputs: ModelInputs,
     evidence_model: dict[str, Any],
     draws: int | None = None,
+    overrides: Params | None = None,
 ) -> dict[str, Any]:
     """Seeded Monte Carlo around the Reference scenario.
+
+    `overrides` replaces fixed Reference parameters before the draws (the
+    50-state model uses it for each state's income tax rate). Parameters that
+    are drawn (completion, discount, fringe and federal tax rates) are still
+    drawn, so the same seed gives every state the same random draws.
 
     Each draw picks one WorkAdvance site, then samples completion, discount,
     fringe and federal tax rates, an early-effect multiplier, correlated
@@ -533,7 +539,7 @@ def simulate_reference(
     draws matches the original model exactly; changing it changes every result.
     """
     scenario = next(s for s in inputs.scenarios if s["scenario"] == "Reference")
-    base = scenario_parameters(inputs, scenario)
+    base = {**scenario_parameters(inputs, scenario), **(overrides or {})}
     n_draws = int(base["SIMULATION_DRAWS"]) if draws is None else draws
     rng = mulberry32(int(base["SIMULATION_SEED"]))
     registry = inputs.registry

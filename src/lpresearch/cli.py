@@ -1,6 +1,6 @@
 """Command line entry point.
 
-lpresearch run utah-roi                 run a pipeline
+lpresearch run utah-roi | state-roi     run a pipeline
 lpresearch verify --facts F note.md     check numbers in any Markdown file
 lpresearch new-note utah-roi --title "..." set up a note folder with its facts snapshot
 lpresearch index-notes                  rewrite notes/index.json, which the site reads
@@ -24,6 +24,13 @@ def _run(args: argparse.Namespace) -> int:
 
         results = run.run(out_dir=Path(args.out) if args.out else None, draws=args.draws)
         for key, value in results["headline"].items():
+            print(f"{key}: {value}")
+        return 0
+    if args.study.replace("-", "_") == "state_roi":
+        from lpresearch.pipelines.state_roi import run
+
+        results = run.run(out_dir=Path(args.out) if args.out else None, draws=args.draws)
+        for key, value in results["summary"].items():
             print(f"{key}: {value}")
         return 0
     studies.get(args.study)
