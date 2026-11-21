@@ -41,11 +41,22 @@ def _run_utah_roi(out_dir: Path | None) -> object:
     return run.run(out_dir=out_dir)
 
 
+def _run_state_roi(out_dir: Path | None) -> object:
+    from lpresearch.pipelines.state_roi import run
+
+    return run.run(out_dir=out_dir)
+
+
 STUDIES: dict[str, Study] = {
     "utah_roi": Study(
         name="utah_roi",
         run=_run_utah_roi,
         context_docs=("docs/model_card.md", "docs/analysis_protocol.md"),
+    ),
+    "state_roi": Study(
+        name="state_roi",
+        run=_run_state_roi,
+        context_docs=("docs/README.md",),
     ),
 }
 

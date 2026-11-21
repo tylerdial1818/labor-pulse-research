@@ -1,0 +1,24 @@
+{
+  "version": "0.1.0",
+  "last_updated": "2026-11-21",
+  "evidence_study": "utah_roi",
+  "evidence_study_note": "The causal evidence (WorkAdvance RCT), national parameters (CPI, payroll tax, fringe, federal tax, discounting) and Monte Carlo design are read unchanged from the Utah study. Only state-specific inputs below differ.",
+  "reference_taxable_income_usd": 30000,
+  "reference_taxable_income_note": "State income tax is applied at the single-filer statutory marginal rate on this taxable income, a rough level for a WorkAdvance-type participant. Analyst choice, tier D.",
+  "alternative_taxable_income_usd": 50000,
+  "workadvance_site_states": {
+    "Per Scholas": "NY",
+    "St. Nicks Alliance": "NY",
+    "Madison Strategies Group": "OK",
+    "Towards Employment": "OH"
+  },
+  "workadvance_site_states_note": "Per Scholas and St. Nicks Alliance ran in New York City, Madison Strategies Group in Tulsa and Towards Employment in Cleveland. Statewide medians are a coarse proxy for those local labor markets.",
+  "rate_overrides": [
+    {
+      "state_abbr": "UT",
+      "rate": 0.045,
+      "source_id": "UTAH_TAX_2025",
+      "reason": "The Tax Foundation table is as of January 1, 2025 and shows 4.55%. Utah cut the rate to 4.5% for tax year 2025; this matches the Utah study's registered parameter."
+    }
+  ]
+}

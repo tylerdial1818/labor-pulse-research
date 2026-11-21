@@ -14,6 +14,8 @@ src/lpresearch/
   studies.py            registry of studies and their background docs
   cli.py                `lpresearch run | facts | verify | new-note | check-notes`
   pipelines/utah_roi/   Utah Workforce ROI benefit-cost model
+  pipelines/state_roi/  the same model run for all 50 states and DC
+studies/state_roi/      state tax brackets, OEWS state wages, settings and method notes
 studies/utah_roi/
   model/                parameter registry and scenario definitions
   evidence/             evidence registry (WorkAdvance RCT estimates)
@@ -51,6 +53,10 @@ CI runs `lpresearch check-notes` on every pull request: each note must pass the 
 A benefit-cost model of WorkAdvance-style sector training for a Utah cohort, from participant, Utah government, combined government and societal perspectives. Values are intent-to-treat per person offered, in 2025 dollars, over a 10-year horizon at a 3% real discount rate, with a seeded 10,000-draw Monte Carlo. See `studies/utah_roi/docs/` for the protocol and model card. Besides the core results, the pipeline writes the report tables: one-way sensitivity, funding-share scenarios, fiscal incidence, the break-even frontier, benefit composition, provider results, Monte Carlo uncertainty screening and occupation rank stability.
 
 The Python model is a direct port of the original Node.js `model_core.mjs`. `tests/test_utah_roi_parity.py` reruns all of it, including every simulation draw, and requires agreement with the Node outputs to within 1e-9 relative. The random number generator (Mulberry32) and the inverse-normal approximation are reimplemented exactly rather than swapped for NumPy or SciPy so that the seeded draws stay identical.
+
+### 50-State Workforce ROI (v0.1.0)
+
+The Utah model run for every state and DC with each state's 2025 income tax rate (Tax Foundation) and, in sensitivities, its OEWS median wage. The causal evidence and national parameters are unchanged, so the societal return is the same everywhere in the Reference case; what varies is how much of it each state government recovers. Run it with `lpresearch run state-roi`. See `studies/state_roi/docs/README.md`.
 
 ## How the number check works
 
