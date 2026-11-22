@@ -5,11 +5,14 @@ lpresearch verify --facts F note.md     check numbers in any Markdown file
 lpresearch new-note utah-roi --title "..." set up a note folder with its facts snapshot
 lpresearch index-notes                  rewrite notes/index.json, which the site reads
 lpresearch check-notes                  what CI runs on notes/
+lpresearch feeds collect                gather candidate AI research from open feeds (weekly Action)
+lpresearch check-featured               what CI runs on ai_impact/featured.json
 """
 
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 from pathlib import Path
 
@@ -95,6 +98,28 @@ def _check_notes(args: argparse.Namespace) -> int:
     return 1 if problems else 0
 
 
+def _feeds_collect(args: argparse.Namespace) -> int:
+    from lpresearch import feeds
+
+    path = feeds.run_collect(since_days=args.since_days)
+    result = json.loads(path.read_text(encoding="utf-8"))
+    for source in result["sources"]:
+        state = f"{source['items']} item(s)" if source["ok"] else f"FAILED {source['error']}"
+        print(f"{source['id']:<22} {state}")
+    print(f"{len(result['candidates'])} new candidate(s) -> {path}")
+    return 0
+
+
+def _check_featured(args: argparse.Namespace) -> int:
+    from lpresearch import featured
+
+    problems = featured.check_featured(featured.read_featured(Path(args.path)))
+    for p in problems:
+        print(f"{p.item}: {p.message}")
+    print(f"featured.json: {len(problems)} problem(s)")
+    return 1 if problems else 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="lpresearch", description="LaborPulse research pipelines")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -129,6 +154,18 @@ def main(argv: list[str] | None = None) -> int:
     check_p = sub.add_parser("check-notes", help="verify every note and its facts snapshot")
     check_p.add_argument("--notes-dir", default=str(studies.REPO / "notes"))
     check_p.set_defaults(func=_check_notes)
+
+    feeds_p = sub.add_parser("feeds", help="research feed tools for the AI Impact page")
+    feeds_sub = feeds_p.add_subparsers(dest="feeds_command", required=True)
+    collect_p = feeds_sub.add_parser("collect", help="write ai_impact/candidates/<today>.json")
+    collect_p.add_argument(
+        "--since-days", type=int, default=10, help="ignore items published before this many days ago"
+    )
+    collect_p.set_defaults(func=_feeds_collect)
+
+    featured_p = sub.add_parser("check-featured", help="validate ai_impact/featured.json")
+    featured_p.add_argument("--path", default=str(studies.REPO / "ai_impact" / "featured.json"))
+    featured_p.set_defaults(func=_check_featured)
 
     args = parser.parse_args(argv)
     return args.func(args)

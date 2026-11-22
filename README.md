@@ -12,7 +12,9 @@ src/lpresearch/
   verify_numbers.py     checks every number in a note against the facts
   notes.py              sets up note folders and checks notes against their facts
   studies.py            registry of studies and their background docs
-  cli.py                `lpresearch run | facts | verify | new-note | check-notes`
+  cli.py                `lpresearch run | facts | verify | new-note | check-notes | feeds collect | check-featured`
+  feeds.py              collects candidate AI-and-labor research from open feeds (weekly Action)
+  featured.py           validates ai_impact/featured.json, the AI Impact page's featured research
   pipelines/utah_roi/   Utah Workforce ROI benefit-cost model
   pipelines/state_roi/  the same model run for all 50 states and DC
 studies/state_roi/      state tax brackets, OEWS state wages, settings and method notes
@@ -25,7 +27,11 @@ studies/utah_roi/
 notes/<study>/<date>-<slug>/
   note.md               the note, with front matter (byline, status, model version)
   facts.json            the facts snapshot it was written from
-docs/                   how notes are written, and the note style guide
+ai_impact/
+  featured.json         featured research shown on laborpulse.org/ai-impact (published on merge)
+  feed_sources.json     open feeds the weekly collector reads
+  candidates/           weekly candidate lists, input to the monthly curation PR
+docs/                   how notes are written, the note style guide, and how featured research is curated
 tests/                  model invariants, Node parity, sensitivity, verifier, note checks
 ```
 
@@ -45,6 +51,10 @@ The package uses only the Python standard library at runtime.
 Notes are drafted by Claude in a LaborPulse project thread, with no API calls or API key. Each note gets its own folder with a snapshot of the facts it was written from, `lpresearch verify` must pass before the pull request opens, and the pull request is the editorial review. The full steps are in [docs/writing-notes.md](docs/writing-notes.md) and the house style is in [docs/note-style.md](docs/note-style.md).
 
 CI runs `lpresearch check-notes` on every pull request: each note must pass the number check against its snapshot, and every snapshot value must still equal what the pipeline computes today. Changing the model therefore flags every note whose numbers moved.
+
+## Featured AI research
+
+The AI Impact page's rotating research list is curated here. A weekly Action collects candidates from open feeds, and a monthly PR picks the best ones. See [docs/curating-featured-research.md](docs/curating-featured-research.md).
 
 ## Studies
 

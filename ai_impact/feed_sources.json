@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "note": "Open feeds for `lpresearch feeds collect`. No keys. A source that fails is reported in the candidates file and skipped, so the first weekly run shows which URLs need fixing.",
+  "sources": [
+    {
+      "id": "arxiv",
+      "label": "arXiv (econ.GN, cs.CY)",
+      "kind": "atom",
+      "url": "https://export.arxiv.org/api/query?search_query=%28cat%3Aecon.GN+OR+cat%3Acs.CY+OR+cat%3Aecon.EM%29+AND+%28abs%3A%22artificial+intelligence%22+OR+abs%3A%22generative+AI%22+OR+abs%3A%22large+language+model%22+OR+abs%3ALLM%29&sortBy=submittedDate&sortOrder=descending&max_results=100"
+    },
+    {
+      "id": "openalex",
+      "label": "OpenAlex (all journals and working paper series)",
+      "kind": "openalex",
+      "url": "https://api.openalex.org/works?search=%22generative%20AI%22%20labor%20market&filter=from_publication_date%3A{since}&sort=publication_date%3Adesc&per-page=100"
+    },
+    {
+      "id": "openalex-employment",
+      "label": "OpenAlex (AI and employment)",
+      "kind": "openalex",
+      "url": "https://api.openalex.org/works?search=%22artificial%20intelligence%22%20employment%20wages&filter=from_publication_date%3A{since}&sort=publication_date%3Adesc&per-page=100"
+    },
+    {"id": "nber", "label": "NBER new working papers", "kind": "rss", "url": "https://www.nber.org/rss/new.xml"},
+    {"id": "brookings", "label": "Brookings", "kind": "rss", "url": "https://www.brookings.edu/feed/"},
+    {"id": "epi", "label": "Economic Policy Institute", "kind": "rss", "url": "https://www.epi.org/feed/"},
+    {"id": "stanford-del", "label": "Stanford Digital Economy Lab", "kind": "rss", "url": "https://digitaleconomy.stanford.edu/feed/"}
+  ]
+}

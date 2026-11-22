@@ -24,3 +24,5 @@ jobs:
         run: pytest -q
       - name: Check research notes
         run: lpresearch check-notes
+      - name: Check featured AI research
+        run: lpresearch check-featured

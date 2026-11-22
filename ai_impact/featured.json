@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "updated": "2026-11-21",
+  "items": [
+    {
+      "id": "cleveland-fed-job-finding-2026-11",
+      "title": "Job Finding and Unemployment in the Age of AI",
+      "authors": "Barış Kaymak and Alexander Cline",
+      "publisher": "Federal Reserve Bank of Cleveland",
+      "published": "2026-11-09",
+      "url": "https://www.clevelandfed.org/publications/economic-commentary/2026/ec-202626-job-finding-and-unemployment-in-the-age-of-ai",
+      "kind": "study",
+      "data_access": "public",
+      "summary": "Unemployment has risen by roughly 1 percentage point more in the most AI-exposed occupations than in the least exposed, mostly because people in those jobs are taking longer to find work, not because more are being laid off.",
+      "evidence": [
+        {
+          "quote": "has risen by roughly 1 percentage point more in occupations most exposed to AI",
+          "url": "https://www.clevelandfed.org/publications/economic-commentary/2026/ec-202626-job-finding-and-unemployment-in-the-age-of-ai"
+        }
+      ],
+      "featured_on": "2026-11-21",
+      "featured_until": "2027-02-19",
+      "tags": [
+        "unemployment",
+        "job-finding",
+        "cps"
+      ]
+    },
+    {
+      "id": "anthropic-expectations-gap-2026-10",
+      "title": "The AI expectations gap",
+      "authors": "Szymon Sacher, Tess Cotter, Charles I. Jones, Anton Korinek and Peter McCrory",
+      "publisher": "Anthropic",
+      "published": "2026-10-16",
+      "url": "https://www.anthropic.com/research/ai-expectations-gap",
+      "kind": "survey",
+      "data_access": "public",
+      "summary": "A survey of US adults and of Anthropic's own staff finds the two groups expect very different futures: US workers on average expect AI to do 28% of their current work by 2030, against 75% for Anthropic staff.",
+      "evidence": [
+        {
+          "quote": "Staff expect AI to do 75% of their current work by 2030, versus 28% for US workers on average",
+          "url": "https://www.anthropic.com/research/ai-expectations-gap"
+        }
+      ],
+      "featured_on": "2026-11-21",
+      "featured_until": "2027-02-19",
+      "tags": [
+        "expectations",
+        "survey"
+      ]
+    },
+    {
+      "id": "yale-budget-lab-tracker-2026-10",
+      "title": "Tracking the Impact of AI on the Labor Market",
+      "authors": "The Budget Lab at Yale",
+      "publisher": "The Budget Lab at Yale",
+      "published": "2026-10-14",
+      "url": "https://budgetlab.yale.edu/research/tracking-impact-ai-labor-market",
+      "kind": "tracker",
+      "data_access": "public",
+      "summary": "Yale's regularly updated tracker still finds that the mix of jobs in the economy is not changing in ways that clearly line up with AI, and that AI usage is not linked to changes in employment or unemployment.",
+      "evidence": [],
+      "featured_on": "2026-11-21",
+      "featured_until": "2027-02-19",
+      "tags": [
+        "tracker",
+        "occupational-mix",
+        "cps"
+      ]
+    },
+    {
+      "id": "genai-adoption-tracker-2026-10",
+      "title": "GenAI Adoption Tracker",
+      "authors": "Alex Bick, Adam Blandin, David Deming and Kerry McKittrick",
+      "publisher": "Federal Reserve Bank of St. Louis",
+      "published": "2026-10-06",
+      "url": "https://www.frbsf.org/research-and-insights/publications/system-research-st-louis-fed/2026/10/genai-adoption-tracker/",
+      "kind": "tracker",
+      "data_access": "public",
+      "summary": "A live tracker of how many American adults use generative AI at work and at home, from the Real-Time Population Survey. The same data feeds the adoption chart on this page through FRED.",
+      "evidence": [],
+      "featured_on": "2026-11-21",
+      "featured_until": "2027-02-19",
+      "tags": [
+        "adoption",
+        "tracker"
+      ]
+    },
+    {
+      "id": "canaries-2026-08",
+      "title": "Canaries in the Coal Mine? Six Facts about the Recent Employment Effects of Artificial Intelligence (August 2026 update)",
+      "authors": "Erik Brynjolfsson, Bharat Chandar and Ruyu Chen",
+      "publisher": "Stanford Digital Economy Lab",
+      "published": "2026-08-12",
+      "url": "https://digitaleconomy.stanford.edu/news/canariesaug26/",
+      "kind": "study",
+      "data_access": "restricted",
+      "summary": "A widely discussed study of AI and young workers, updated with data through mid-2026. The employment gap for 22 to 25 year-olds in highly exposed jobs widened from 15% to about 19%, with no sign of broad displacement for older workers. A monthly dashboard tracks it.",
+      "evidence": [
+        {
+          "quote": "about 19% below where they would be had they kept pace with similarly aged workers in less-exposed occupations",
+          "url": "https://digitaleconomy.stanford.edu/news/canariesaug26/"
+        },
+        {
+          "quote": "The gap was 15% at the July 2025 data vintage",
+          "url": "https://digitaleconomy.stanford.edu/news/canariesaug26/"
+        },
+        {
+          "quote": "workers ages 22-25 in highly AI-exposed occupations",
+          "url": "https://digitaleconomy.stanford.edu/news/canariesaug26/"
+        }
+      ],
+      "featured_on": "2026-11-21",
+      "featured_until": "2027-02-19",
+      "tags": [
+        "early-career",
+        "hiring",
+        "adp"
+      ]
+    },
+    {
+      "id": "seniority-biased-2026-05",
+      "title": "Generative AI as Seniority-Biased Technological Change: Evidence from U.S. Résumé and Job Posting Data",
+      "authors": "Seyed M. Hosseini and Guy Lichtinger",
+      "publisher": "Harvard University working paper",
+      "published": "2026-05-06",
+      "url": "https://raw.githack.com/s-mahdihosseini/Website/b99fa2962dcc4c165bbc3c41dd283afa99c5ccfb/GenAI_SenBTC_May_2026.pdf",
+      "kind": "study",
+      "data_access": "restricted",
+      "summary": "Following 65 million workers' résumés, the authors find that firms adopting generative AI cut junior employment by about 9 percent after six quarters, mainly by hiring fewer juniors, while senior employment held steady.",
+      "evidence": [
+        {
+          "quote": "Junior employment at adopters declines by about 9 percent after six quarters",
+          "url": "https://raw.githack.com/s-mahdihosseini/Website/b99fa2962dcc4c165bbc3c41dd283afa99c5ccfb/GenAI_SenBTC_May_2026.pdf"
+        },
+        {
+          "quote": "65 million workers",
+          "url": "https://raw.githack.com/s-mahdihosseini/Website/b99fa2962dcc4c165bbc3c41dd283afa99c5ccfb/GenAI_SenBTC_May_2026.pdf"
+        }
+      ],
+      "featured_on": "2026-11-21",
+      "featured_until": "2027-02-19",
+      "tags": [
+        "early-career",
+        "hiring",
+        "firms"
+      ]
+    },
+    {
+      "id": "census-btos-ai-2026-05",
+      "title": "Large Firms With at Least 20 Employees Biggest AI Users",
+      "authors": "Adam Grundy, Cory Breaux and Dhanapati Khatiwoda",
+      "publisher": "U.S. Census Bureau",
+      "published": "2026-05-22",
+      "url": "https://census.gov/library/stories/2026/05/ai-use-businesses.html",
+      "kind": "survey",
+      "data_access": "public",
+      "summary": "About one in five U.S. businesses used AI as of May 2026, with much higher use in the information and finance industries and among large firms.",
+      "evidence": [],
+      "featured_on": "2026-11-21",
+      "featured_until": "2027-02-19",
+      "tags": [
+        "adoption",
+        "firms",
+        "btos"
+      ]
+    },
+    {
+      "id": "still-waters-2026-03",
+      "title": "Still Waters, Rapid Currents: Early Labor Market Transformation under Generative AI",
+      "authors": "Anders Humlum and Emilie Vestergaard",
+      "publisher": "NBER Working Paper 33777",
+      "published": "2026-03-01",
+      "url": "https://www.nber.org/papers/w33777",
+      "kind": "study",
+      "data_access": "restricted",
+      "summary": "Linking surveys to Danish government records, the authors find no effect of AI chatbots on earnings or hours so far, ruling out effects larger than 2%, while firms quietly reorganize tasks around the new tools.",
+      "evidence": [
+        {
+          "quote": "ruling out effects larger than 2% two years after the launch of ChatGPT",
+          "url": "https://www.nber.org/papers/w33777"
+        }
+      ],
+      "featured_on": "2026-11-21",
+      "featured_until": "2027-02-19",
+      "tags": [
+        "wages",
+        "hours",
+        "international"
+      ]
+    }
+  ]
+}
