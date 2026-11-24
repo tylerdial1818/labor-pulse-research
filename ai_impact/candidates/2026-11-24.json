@@ -1,0 +1,686 @@
+{
+  "schema_version": 1,
+  "collected": "2026-11-24",
+  "since": "2026-11-14",
+  "sources": [
+    {
+      "id": "arxiv",
+      "ok": true,
+      "items": 100
+    },
+    {
+      "id": "openalex",
+      "ok": true,
+      "items": 99
+    },
+    {
+      "id": "openalex-employment",
+      "ok": true,
+      "items": 99
+    },
+    {
+      "id": "nber",
+      "ok": true,
+      "items": 24
+    },
+    {
+      "id": "brookings",
+      "ok": false,
+      "error": "ParseError: undefined entity: line 57, column 0"
+    },
+    {
+      "id": "epi",
+      "ok": true,
+      "items": 1
+    },
+    {
+      "id": "stanford-del",
+      "ok": false,
+      "error": "ParseError: syntax error: line 1, column 0"
+    }
+  ],
+  "candidates": [
+    {
+      "title": "Who Is Exposed to Automation and Artificial Intelligence in the US Labor Market? A Reproducible Machine-Learning Analysis of Occupations, States and the Healthcare Workforce",
+      "url": "https://doi.org/10.5281/zenodo.24444702",
+      "source": "openalex-employment",
+      "published": "2026-11-22",
+      "authors": "Jude Topa Obidi",
+      "abstract": "Occupation-level estimates of exposure to automation and artificial intelligence (AI) are widely used in workforce policy, but the analyses behind them are often hard to reproduce. This paper reports a corrected, fully reproducible analysis for the United States. It combines Frey and Osborne's (2017) probabilities of computerization with Bureau of Labor Statistics wage (May 2016) and state employment data for 702 occupations (about 125.1 million jobs). The employment-weighted mean probability is 0.606, and 51.7% of jobs are in occupations with a probability above 0.7. Exposure is concentrated in large, lower-wage occupations and falls with pay (Spearman ρ = −0.54 against median wage). Across states it ranges from 0.545 (Massachusetts) to 0.665 (Nevada), with the District of Columbia at 0.445. These differences reflect only each state's occupational mix. The paper also documents a methodological lesson. The R² of 0.82 reported in the author's original MSc analysis came from target leakage, because the target was computed from two of the input features. Once this is corrected, linear regression, random forest and gradient boosting predict an occupation's probability from wages, employment and occupational group with a test R² of 0.49–0.51 on 138 held-out occupations (RMSE ≈ 0.26 against a baseline of 0.370). In healthcare, Healthcare Support occupations have an employment-weighted mean of 0.418, with 9.5% of jobs above 0.7. Information- and laboratory-processing roles score 0.89–0.92, personal care aides (about 1.49 million jobs) score 0.74, and clinical professions score very low. These probabilities describe technical feasibility of computerization, including machine learning and AI-driven technologies, as estimated in 2013, not forecast job losses.",
+      "score": 18,
+      "matched_terms": [
+        "ai",
+        "artificial intelligence",
+        "employment",
+        "job",
+        "jobs",
+        "labor market",
+        "occupation",
+        "occupations",
+        "wage",
+        "wages",
+        "workforce"
+      ]
+    },
+    {
+      "title": "Artificial Intelligence–Driven Transformation of the Labor Market: An Empirical Analysis of AI Job Demand Trends",
+      "url": "https://doi.org/10.63913/jds.v2i4.46",
+      "source": "openalex-employment",
+      "published": "2026-11-17",
+      "authors": "Naruemon Thepnuan",
+      "abstract": "The rapid advancement of artificial intelligence (AI) technologies has significantly transformed the global labor market, creating new job opportunities while reshaping the demand for specialized skills. This study aims to examine the impact of AI on labor market dynamics by analyzing trends in AI-related job demand, salary distribution, work arrangements, and job categories. Using a dataset of 1,500 AI job postings from 2025–2026, this research applies descriptive statistical analysis and exploratory data analysis to identify emerging patterns in the AI employment landscape. The results indicate a substantial increase in AI job postings between 2025 and 2026, reflecting the growing adoption of AI technologies across industries. The findings also reveal that AI-related roles offer highly competitive salaries, with an average annual salary of approximately $194,892, while senior-level positions can exceed $300,000. In addition, hybrid and remote work arrangements dominate the AI labor market, highlighting the flexibility of technology-driven occupations. The analysis further shows that roles such as LLM Engineer, Prompt Engineer, and Generative AI Engineer are among the most in-demand positions, reflecting the rapid expansion of generative AI technologies. These findings demonstrate that artificial intelligence plays a critical role in reshaping workforce demand and generating new employment opportunities in the digital economy.",
+      "score": 18,
+      "matched_terms": [
+        "ai",
+        "artificial intelligence",
+        "employment",
+        "generative ai",
+        "job",
+        "labor market",
+        "llm",
+        "occupations",
+        "workforce"
+      ]
+    },
+    {
+      "title": "On the Challenges of Using LLMs in High-Risk AI Recruitment: Guiding Questions for Legal Conformity with the AI Act",
+      "url": "https://arxiv.org/abs/2611.27462v1",
+      "source": "arxiv",
+      "published": "2026-11-20",
+      "authors": "Clara Punzi, Stefano Tramacere, Andrea Fedele, Sezer Kutluk, Roberto Pellungrini, Gizem Gezici, Paolo Baracco, Laura Castello, Eleonora Cusin, Eduardo Costa, Amedeo Giacovelli, Mario D'Almo, Fosca Giannotti, Dino Pedreschi, Marzio Di Vece",
+      "abstract": "The EU Artificial Intelligence Act (AI Act) imposes detailed obligations on providers of high-risk AI systems but offers limited operational guidance, particularly when these systems integrate third-party General-Purpose AI (GPAI) models. This paper introduces a toolkit that fosters the development of legal-by-design AI-assisted recruitment systems by translating the core legal obligations of the AI Act's conformity assessment---specifically Articles 9--15 and Annex IV---into techno-normative requirements and corresponding guiding questions. While recruitment pipelines may involve components with varying technical complexity and differing levels of algorithmic transparency, this paper focuses on the most challenging case: the integration of third-party GPAI models into critical stages of the selection process, including resume and job description parsing, applicant scoring, and shortlist generation. This scenario presents significant challenges for downstream providers of high-risk AI systems, as it underscores the difficulties in obtaining the technical information needed to demonstrate compliance with the AI Act's techno-normative requirements, both prior to and during market deployment. After introducing the toolkit and illustrating its application through a simplified example, the paper explores informational dependencies between upstream and downstream GPAI model providers. These dependencies may produce informational gaps across the AI supply chain, potentially hindering the collection of evidence necessary for the AI system provider to ensure legal compliance. The resulting lack of technical transparency negatively affects the deployer, who may struggle to maintain meaningful oversight of the system, and ultimately impacts the persons subject to the AI output.",
+      "score": 16,
+      "matched_terms": [
+        "ai",
+        "artificial intelligence",
+        "job",
+        "llms"
+      ]
+    },
+    {
+      "title": "Occupational Employment and Real Wage Changes Across U.S. Metropolitan Areas, 2021–2025: Geographic Robustness, Wage Decomposition, and Measurement Sensitivity",
+      "url": "https://doi.org/10.5281/zenodo.24355669",
+      "source": "openalex-employment",
+      "published": "2026-11-19",
+      "authors": "Peter Sarpong",
+      "abstract": "Overview This research archive provides data, R scripts, analytical outputs, and reproducibility documentation supporting the study titled “Occupational Employment and Real Wage Changes Across U.S. Metropolitan Areas, 2021–2025: Geographic Robustness, Wage Decomposition, and Measurement Sensitivity.” The study examines occupational employment trends, inflation-adjusted mean wages, geographic sample selection, and measurement sensitivity using publicly available data from the U.S. Bureau of Labor Statistics (BLS) Occupational Employment and Wage Statistics (OEWS) program and annual-average Consumer Price Index for All Urban Consumers (CPI-U). Research Data and Methods The primary analytical dataset comprises 10 occupations across 212 U.S. metropolitan areas over five years (2021–2025), producing a balanced panel of 10,600 occupation–metropolitan area–year observations. The analysis includes: Employment changes and CPI-U-adjusted mean-wage trends. Comparisons of contemporaneous employment weighting and fixed-2021 employment weighting. Exact decomposition of real-wage changes into within-metropolitan wage changes and geographic employment-share changes. Geographic sample-selection and missingness audits. Leave-one-metropolitan-area-out sensitivity analyses. Key Findings Employment changes varied substantially across the ten occupations, ranging from a decline of approximately 25.29% for loan officers to an increase of 42.76% for project management specialists. For market research analysts and marketing specialists, the estimated change in real mean wages was −0.304% using contemporaneous employment weights, compared with +0.729% using fixed-2021 employment weights. An exact decomposition identified a positive within-metropolitan real-wage component of approximately $691.93 and a negative geographic employment-share component of approximately $971.21, resulting in an overall real-wage change of approximately −$279.28. The wage-direction reversal persisted in 211 of 212 leave-one-metropolitan-area-out analyses. Seattle–Tacoma–Bellevue was the sole exception, demonstrating the influence of individual metropolitan labor markets on aggregate estimates. Reproducibility and Archive Contents The archive includes the analytical data, R scripts, wage-decomposition outputs, geographic coverage diagnostics, sensitivity analyses, checksum manifest, validation documentation, and revised working manuscript. Archive-relative numerical verification reproduced the primary occupational panel, wage estimates, decomposition results, leave-one-metropolitan-area-out findings, and geographic coverage counts. These checks were performed within the researcher's workflow and do not constitute independent external replication. Limitations The findings are descriptive and do not establish causal effects of artificial intelligence, automation, or other economic mechanisms on occupational employment or wages. Interpretation should account for OEWS survey-estimation procedures, temporal comparability limitations, metropolitan geographic definitions, and the exclusion of observations with incomplete data. Data Sources U.S. Bureau of Labor Statistics, Occupational Employment and Wage Statistics (OEWS): https://www.bls.gov/oes/ U.S. Bureau of Labor Statistics, Consumer Price Index (CPI): https://www.bls.gov/cpi/ Researcher Peter Sarpong ORCID: https://orcid.org/0009-0000-0871-8285 Archive version: 1.0.0 Resource type: Dataset Status: Research data and reproducibility materials accompanying a working manuscript; not a peer-reviewed publication.",
+      "score": 16,
+      "matched_terms": [
+        "artificial intelligence",
+        "employment",
+        "labor markets",
+        "occupation",
+        "occupations",
+        "wage",
+        "wages"
+      ]
+    },
+    {
+      "title": "Impact of Artificial Intelligence on IT Jobs: Opportunities, Displacement Risks, and Skill Transformation",
+      "url": "https://doi.org/10.17148/imrjr.2026.031105",
+      "source": "openalex-employment",
+      "published": "2026-11-17",
+      "authors": "Zaid Kamboo, Muaz Shaikh, Shinde Mayur, Vishwas Khamkar, Pranita Manjare",
+      "abstract": "Artificial intelligence (AI), particularly generative AI, is changing the way information-technology work is planned, performed, reviewed, and delivered.Its influence extends beyond the automation of repetitive activities to include task redistribution, productivity, software quality, recruitment expectations, and the skills required across technical occupations.This paper examines the impact of AI on IT jobs through a narrative review of institutional reports and selected empirical studies.It focuses on software development, software testing, IT support, data and cloud operations, cybersecurity, and entry-level employment.The review indicates that exposure to AI should not be interpreted as an equivalent probability of job loss.Many occupations contain tasks that can be assisted by AI while still requiring human judgement, domain understanding, verification, communication, and accountability.Evidence of productivity improvement is promising but context-dependent, and results from controlled tasks cannot automatically be generalised to every workplace.The paper analyses opportunities and displacement risks, identifies capabilities that complement AI-assisted work, and presents recommendations for students, employers, and educational institutions.The study is based entirely on secondary sources; it does not claim to have conducted a primary survey or generated original respondent statistics.",
+      "score": 16,
+      "matched_terms": [
+        "ai",
+        "artificial intelligence",
+        "displacement",
+        "employment",
+        "entry-level",
+        "generative ai",
+        "job",
+        "jobs",
+        "occupations",
+        "productivity"
+      ]
+    },
+    {
+      "title": "How GenAI Adoption Affects Job Demand: Evidence from India",
+      "url": "https://aisel.aisnet.org/icis2026/society/society/18",
+      "source": "openalex",
+      "published": "2026-12-14",
+      "authors": "Derek Tran, Probal Mojumder, Sunil Mithas, Samadrita Bhattacharyya",
+      "abstract": "How does Generative Artificial Intelligence (GenAI) affect labor markets in emerging economies? We address this important question leveraging data from a leading job postings platform in India and exploiting ChatGPT’s launch in November 2022 as a quasi-natural experiment. The findings indicate that GenAI adoption reshapes labor demand through differential effects across GenAI-exposed versus non-exposed occupations. We document the effect of GenAI on jobs across IT outsourcing (ITO)/business process outsourcing (BPO) jobs versus other industries, and partial mediation through GenAI exposure. The study contributes to debates on technological displacement versus skill transformation, offering implications for policy design, and workforce reskilling strategies.",
+      "score": 14,
+      "matched_terms": [
+        "artificial intelligence",
+        "chatgpt",
+        "displacement",
+        "genai",
+        "job",
+        "jobs",
+        "labor markets",
+        "occupations",
+        "workforce"
+      ]
+    },
+    {
+      "title": "The Economics of AI and Robotics: A Scenario Analysis of Automation, Employment, Poverty, Taxation and Income Distribution in a Hypothetical Three-Sector Economy",
+      "url": "https://doi.org/10.21203/rs.3.rs-11761243/v1",
+      "source": "openalex-employment",
+      "published": "2026-11-18",
+      "authors": "Muhmmad Muqeem Islam Muqeem",
+      "abstract": "This study examines how the deepening of artificial intelligence (AI) and robotics, defined as the progressive replacement of human workers by machines, affects output, employment, poverty and income distribution. Drawing on the economics of prediction and general-purpose technologies, the task-based theory of automation, growth theory, the literature on factor shares and Keynesian demand constraints, we construct a hypothetical economy, Solvania, with 30 million inhabitants, GDP per capita of US$25,000, 6% unemployment, a 5.3% poverty rate and three sectors: agriculture (30% of output and employment), automobile manufacturing (20%) and services (50%). A macro-sectoral model linked to a 150,000-household microsimulation, implemented in Python, traces a gradual scenario, in which automation reaches 25% of jobs within five years and 50% by year 20, and a rapid scenario, in which it reaches 80% in agriculture and manufacturing and 60% in services within ten years. Both paths raise GDP strongly, to US$1.57 trillion by year 20 (gradual) and US$1.39 trillion by year 10 (rapid), but the gains are distributed very unequally. In the rapid scenario unemployment reaches 47.2%, the labour share falls from 60% to 19.9%, the Gini coefficient rises from 0.369 to 0.621 and poverty more than triples to 17.3%, while median income rises by only 8%. A policy package combining an automation levy that finances a universal dividend, universal income support, accelerated reinstatement and work sharing reduces poverty to 0.7%, lowers the Gini to 0.408 and raises GDP by a further 16%. The results are robust to alternative assumptions and support redistributive and labour market institutions established before the fastest phase of automation. JEL classification: D31, E24, H23, I32, J23, J31, O33",
+      "score": 14,
+      "matched_terms": [
+        "ai",
+        "artificial intelligence",
+        "employment",
+        "jobs",
+        "labour market",
+        "labour share",
+        "unemployment",
+        "workers"
+      ]
+    },
+    {
+      "title": "A Review of Generative Artificial Intelligence and Its Implications for Employment and Economic Inequality",
+      "url": "https://doi.org/10.48175/ijarsct-40829",
+      "source": "openalex-employment",
+      "published": "2026-11-18",
+      "authors": "Bal Krishna Sharma",
+      "abstract": "Generative Artificial Intelligence (GenAI) is transforming work environments through automated task execution, content generation, data analysis, and human–AI collaboration. This review examines its technological foundations, workplace adoption, implications for employment, and potential effects on economic inequality. It outlines major generative architectures, including generative adversarial networks, transformers, variational autoencoders, diffusion models, autoencoders, and autoregressive models, as well as applications in image, audio, video, and three-dimensional content generation. The review then considers how technological capabilities translate into employment outcomes through firm adoption, deployment depth, task reorganization, complementary investment, and labor reallocation. It also discusses the changing skills required in AI-enabled workplaces, emphasizing critical thinking, creativity, emotional intelligence, digital literacy, AI ethics, and human–machine collaboration. Furthermore, the paper explores how unequal access to AI technologies, occupational disruption, and concentrated economic benefits may widen disparities within and between countries. Ethical, security, bias, privacy, and interpretability challenges are also considered. Overall, the review highlights the need for workforce development, responsible AI governance, inclusive policies, and equitable access to ensure that GenAI supports productive, broadly shared socioeconomic progress across diverse sectors and communities amid changing economic conditions.",
+      "score": 14,
+      "matched_terms": [
+        "ai",
+        "artificial intelligence",
+        "employment",
+        "genai",
+        "workforce"
+      ]
+    },
+    {
+      "title": "Productivity Without Prosperity? Who Captures the Economic Gains from Workplace Artificial Intelligence?",
+      "url": "https://doi.org/10.21203/rs.3.rs-11745769/v1",
+      "source": "openalex-employment",
+      "published": "2026-11-17",
+      "authors": "Sarfaraz Abdullah",
+      "abstract": "Experiments show that generative AI raises productivity on specific tasks by 14 to 40 percent, but who benefits when it spreads through the economy is far less clear. This study builds a capture accounting from task to economy. It links published field and survey evidence on productivity gains, adoption and wage pass-through to an exact decomposition of productivity gains in the U.S. nonfarm business sector, using the Bureau of Labor Statistics (BLS) release of 5 November 2026 and the Census Bureau’s Business Trends and Outlook Survey. Between the first quarter of 2024 and the third quarter of 2026, output per hour rose by 6.35 log points; 3.28 points (51.7 percent; rounding interval 50.3 to 53.1) reached workers as higher compensation relative to output prices, and 3.07 points went to nonlabor income as the labor share fell to 53.0 percent, the lowest since 1947. Labor’s capture fell from 84 percent in 2024 to 70 percent in 2025 and turned negative (-16 percent) in the four quarters to 2026 Q3, while nonfinancial corporate unit profits rose 16.1 percent. At the worker level, Danish administrative data show only 3 to 7 percent of productivity gains reaching earnings. A consistency bound combining these pass-through rates with plausible shares of AI in productivity growth implies that AI explains a minority of the rise in nonlabor capture (median 23 percent; 5th to 95th percentile 8 to 38 percent) and cannot be the whole story. The evidence is descriptive and aggregate, and the AI shares are bounds, not estimates. Purpose - This study asks who captures the economic gains from workplace AI, and how much of the recent shift in the distribution of productivity gains could plausibly be attributed to it. Design/methodology/approach - The paper combines published task-level, worker-level and firm-level evidence with an exact capture decomposition of BLS quarterly data, rounding-error Monte Carlo intervals, and a consistency analysis that bounds the AI contribution using pass-through rates and adoption arithmetic. Findings - Roughly half of the recent productivity gain went to workers and half to nonlabor income, with workers’ share falling over time and turning negative in the latest quarters. AI use is concentrated in large firms and in information and finance. Pass-through of AI-specific gains to workers is small, but AI can account for only a minority of the shift. Research limitations/implications - Aggregate indexes are rounded and revised, AI shares of productivity growth are not observed, and field studies are not representative of the economy. The analysis cannot identify causal effects. Practical implications - Bargaining institutions, training and transparency over how time savings are used are likely to determine capture, and policy should track labor’s share of gains alongside productivity. Social implications - Productivity growth need not translate into prosperity for workers, and young entrants in exposed occupations face distinct employment risk. Originality/value - The paper provides a transparent accounting that connects micro and macro evidence on AI’s distributional effects and quantifies what current data can and cannot say.",
+      "score": 14,
+      "matched_terms": [
+        "ai",
+        "artificial intelligence",
+        "earnings",
+        "employment",
+        "generative ai",
+        "labor share",
+        "occupations",
+        "productivity",
+        "wage",
+        "worker",
+        "workers"
+      ]
+    },
+    {
+      "title": "HireWatch: Evaluating LLM Compliance with U.S. Employment Law Under Contextual Pressure",
+      "url": "https://arxiv.org/abs/2611.24970v1",
+      "source": "arxiv",
+      "published": "2026-11-16",
+      "authors": "Huy Nghiem, Maria Kostylew, Noam Kolt",
+      "abstract": "The deployment of large language models (LLMs) in hiring pipelines is growing, yet existing evaluations generally overlook their compliance with legal rules. To fill this gap, we introduce HireWatch, an evaluation that assesses whether LLMs comply with U.S. laws that govern the questions that job candidates may be asked. We construct a 200-item bank of lawful and unlawful interview questions, whose legal classification is based on U.S. federal statutes, regulations, and agency guidance. We instruct LLMs to select questions from this bank in preparing for job interviews, across a set of various occupations and contexts, and report the fraction of unlawful questions that LLMs select. Evaluation of 18 closed and open-weight LLMs across ~100,000 trials under different types of contextual pressure reveals that LLMs' legal compliance is brittle. While LLMs generally avoid selecting unlawful questions in low-pressure contexts, legal violations increase sharply under higher pressure. Explicit prompts to comply with law can improve compliance rates, but do not altogether eliminate legal violations. We publicly release our code and data at https://github.com/hnghiem-nlp/hirewatch_repo.",
+      "score": 14,
+      "matched_terms": [
+        "employment",
+        "hiring",
+        "job",
+        "large language models",
+        "llm",
+        "llms",
+        "occupations"
+      ]
+    },
+    {
+      "title": "Can AI Judge You? An Empirical Audit of Deployment Readiness in LLM-assisted Hiring Systems",
+      "url": "https://arxiv.org/abs/2611.20140v2",
+      "source": "arxiv",
+      "published": "2026-11-15",
+      "authors": "Spandan Roy, Subhabrata Majumdar, Soudeep Deb",
+      "abstract": "Delegating resume screening to large language models (LLMs) requires organizations to establish whether they can distinguish candidates by relevant qualifications while allowing only authorized users to change screening rules or approve exceptions. To this end, we develop a system architecture that separates candidate evidence, evaluation, permission controls, and assessment record, and empirically examine two complementary dimensions of its deployment readiness. First, we assess its operational readiness on four LLMs using a controlled experiment on 210 resumes across 14 job roles and six decision interfaces. Second, we assess its compliance readiness by testing how it handles unauthorized user requests and instructions embedded in resumes. We find that operational performance depends on the choice of evaluation interface: scalar scores generally distinguish qualification changes better than simple pass/fail judgments, while comparative judgments are sensitive to presentation order. Explicit permission rules and separation of resume content from instructions reduce unauthorized compliance, to a varying degree of effectiveness across LLMs and usage contexts. Finally, we find that LLM evaluators often diverge between their decisions and offered justifications. Going beyond simply evaluating LLMs for hiring tasks, our framework supports an audit of a fully configured resume evaluation system to enable its deployment decision.",
+      "score": 14,
+      "matched_terms": [
+        "ai",
+        "hiring",
+        "job",
+        "large language models",
+        "llm",
+        "llms"
+      ]
+    },
+    {
+      "title": "Separating AI from Capital: Identifying the Productivity Contribution of Artificial Intelligence across Countries and Sectors",
+      "url": "https://doi.org/10.21203/rs.3.rs-11599318/v1",
+      "source": "openalex",
+      "published": "2026-11-20",
+      "authors": "Syed M. Abdullah, Muhammad Elyoun Seja",
+      "abstract": "Does enterprise adoption of artificial intelligence (AI) raise total factor productivity (TFP), or does measured output growth mainly reflect capital deepening and labour growth? We separate these channels in two stages. First, we compute T\\\"ornqvist growth-accounting residuals using time-varying labour shares from the Penn World Table (PWT) 10.01, with PWT capital stocks extended to 2024 by perpetual inventory using World Bank investment data. Second, we relate TFP growth to the share of enterprises using AI, taken from Organisation for Economic Co-operation and Development (OECD) business surveys, in a country-year panel with country and year fixed effects. To address endogenous adoption, we use shift-share instruments that interact 2010 fixed-broadband and internet penetration with leave-one-out cross-country AI diffusion, estimated by two-stage least squares (2SLS) and limited-information maximum likelihood (LIML), with weak-instrument-robust Anderson--Rubin inference. Because adoption data cover only 36 countries in recent years (102 country-year observations), statistical power is limited. We find no detectable contemporaneous effect of AI adoption on TFP growth: the fixed-effects estimate is 0.005 percentage points per percentage point of adoption ($p = 0.93$), and the 2SLS and LIML estimates are 0.153 ($p = 0.42$) and 0.299 ($p = 0.48$), with a weak first stage. Point estimates at one- and two-year lags are larger (0.054 and 0.096) but imprecise. A sectoral exposure design with country-by-year and sector-by-year fixed effects, an OECD-only subsample, and a leave-one-country-out jackknife give similar results. The evidence is consistent with, but cannot confirm, a delayed productivity J-curve. JEL Classification: O33 , O47 , C23 , C26 , E23 , D24",
+      "score": 13,
+      "matched_terms": [
+        "ai",
+        "ai adoption",
+        "artificial intelligence",
+        "productivity"
+      ]
+    },
+    {
+      "title": "AI-Induced Social Erosion: Using LLMs for Work Tasks Reduces Help-Seeking Intentions Towards Colleagues",
+      "url": "https://arxiv.org/abs/2611.25269v1",
+      "source": "arxiv",
+      "published": "2026-11-18",
+      "authors": "Kevin Chow, Sophia Deng, Bowen He, Hanyi Min, Qiaosi Wang, Koustuv Saha, Vedant Das Swain",
+      "abstract": "Generative AI is becoming embedded in knowledge work as an intelligent collaborator to assist in completing tasks. However, this readily available assistance risks displacing key interactions through which colleague relationships are built and sustained at work. This paper leverages the concept of help-seeking behaviour to investigate whether and how AI usage shapes colleague relationships. We conducted an online experimental vignette study where 248 knowledge workers evaluated scenarios that systematically varied whether and how AI was used across different work tasks. Using linear mixed-effects models, we found that AI-enabled work reduced help-seeking intentions compared to non-AI work across tasks, and especially for brainstorming. Visible AI usage was associated with greater help-seeking intentions towards colleagues, and individual contributors' colleague relationships were more vulnerable than managers. Our findings identify opportunities for workplace AI tools, practices, and policies to preserve colleague relationships in increasingly AI-integrated workplaces.",
+      "score": 13,
+      "matched_terms": [
+        "ai",
+        "generative ai",
+        "llms",
+        "workers"
+      ]
+    },
+    {
+      "title": "Artificial Intelligence in Human Resource Management: A Systematic Literature Review, Integrative Framework, and Future Research Agenda",
+      "url": "https://doi.org/10.65072/jebim.v2i1.4",
+      "source": "openalex",
+      "published": "2026-12-30",
+      "authors": "Attia Hussien Gomaa",
+      "abstract": "Artificial intelligence (AI) is reshaping Human Resource Management (HRM) by transforming how organizations acquire, develop, deploy, evaluate, and retain human capital while expanding HR’s strategic role in decision-making and value creation. Despite growing scholarly attention, AI-driven HRM research remains fragmented across HR functions, theoretical perspectives, technological capabilities, and organizational contexts, limiting understanding of how AI creates value, through which mechanisms it influences employee and organizational outcomes, and under what conditions these effects emerge. This study addresses these limitations through a systematic literature review of research on AI-driven HRM published between 2011 and 1 July 2026. The review critically synthesizes the evolution, applications, enabling capabilities, value-creation mechanisms, implementation conditions, and outcomes of AI-driven HRM, with particular attention to human–AI collaboration, organizational readiness, leadership, organizational culture, AI literacy, employee trust, workforce adaptability, and responsible AI governance. It identifies key conceptual, theoretical, empirical, methodological, and contextual gaps and develops a structured agenda for future research. Building on the synthesized evidence, the study proposes an integrative framework that conceptualizes AI-driven HRM as a dynamic socio-technical capability through which AI-enabled technological resources are orchestrated with strategic HR practices, human capabilities, leadership and culture, responsible AI governance, and continuous learning to generate sustainable employee and organizational value. Contextual conditions and governance mechanisms are positioned as critical boundary conditions shaping these relationships. Lean Six Sigma DMAIC is incorporated as a complementary continuous-improvement mechanism to support the systematic measurement, analysis, improvement, and control of AI-enabled HR processes. The study advances AI-HRM scholarship by moving beyond technology-centric and function-specific perspectives toward an integrated, human-centered, strategically embedded, and responsibly governed understanding of AI-driven HRM, while providing a theoretically grounded foundation for future empirical research and sustainable organizational value creation.",
+      "score": 12,
+      "matched_terms": [
+        "ai",
+        "artificial intelligence",
+        "workforce"
+      ]
+    },
+    {
+      "title": "Artificial intelligence, the labor market, and energy consumption: What do major agencies in Latin America say?",
+      "url": "https://doi.org/10.24275/uam/izt/dcsh/denarius/v12026n50/cetre",
+      "source": "openalex",
+      "published": "2026-11-23",
+      "authors": "Moissés Ildefonso Cetre Castillo",
+      "abstract": "The emergence of generative artificial intelligence (AI) has attracted significant attention in recent years; however, there are still few studies that rigorously examine its impacts on the labor market and, consequently, on the economy (Roose, 2023; Babina et al., 2022; The Adecco Group Institute, 2024). In this context, it is recognized that AI is transforming both employment dynamics and energy consumption on a global scale. This work aims to preliminarily understand the current state of AI in Latin America and review the state of the art on the matter, with special interest in identifying some relevant conclusions from three multilateral agencies. Recent studies, like the one by Jung and Katz (2026), claim that a 1% increase in AI spending is associated with a 0.036% growth in GDP, an effect that mainly materializes through improvements in the productivity of skilled labor.",
+      "score": 12,
+      "matched_terms": [
+        "ai",
+        "artificial intelligence",
+        "employment",
+        "labor market",
+        "productivity"
+      ]
+    },
+    {
+      "title": "FORMATION OF ENTERPRISES’ INTELLECTUAL CAPITAL BASED ON AN AI-DRIVEN MANAGEMENT MODEL",
+      "url": "https://doi.org/10.32782/2523-4803/76-4-5",
+      "source": "openalex",
+      "published": "2026-11-20",
+      "authors": "О. В. Глембицький",
+      "abstract": "This article develops an AI-driven model for managing the process of building intellectual capital in enterprises in the context of digital transformation. It explores the role of artificial intelligence as a technological factor that enhances the interaction between human, structural and relational capital, rather than treating it as a separate component of intellectual capital. This approach defines the role of artificial intelligence within the proposed management model: AI technologies facilitate the development and coordinated use of existing components of intellectual capital, acting as a technological means of influencing the interrelationships between them. The architecture of the proposed model is defined as a sequence of interrelated stages, encompassing information resources, AI data processing, intellectual capital management, managerial decision-making and feedback. Information resources form the basis for further data processing and analysis. The use of artificial intelligence supports the handling of relevant information in the process of intellectual capital management. The results of information processing are utilised in managerial decision-making, which are then translated into corresponding managerial actions. Feedback ensures that the results of these actions are taken into account in the subsequent management process. Thus, the model’s architecture integrates the key stages of managing the formation of intellectual capital into a single system. To forecast the effectiveness of the proposed model, an economic-mathematical approach has been developed which takes into account the components of intellectual capital and the level of integration of artificial intelligence technologies into the management process. This approach provides a basis for assessing the interrelationship between human, structural and relational capital, the use of AI technologies and the effectiveness of intellectual capital management. Consequently, the proposed model is geared not only towards identifying the interrelationships between its elements, but also towards forecasting the potential effectiveness of its application. Indicators for assessing the model’s effectiveness have been identified, including labour productivity, operational optimisation, innovation activity, the speed of managerial decision-making and the enterprise’s competitiveness. These indicators reflect various aspects of the expected outcomes of applying the model, in particular the efficient use of labour resources, the organisation of operational activities, the development of innovation, the timeliness of management decision-making and the enterprise’s competitive position. Taken together, they form the basis for a systematic assessment of the effectiveness of the proposed AI-driven approach to managing the process of building enterprises’ intellectual capital in the context of digital transformation.",
+      "score": 12,
+      "matched_terms": [
+        "ai",
+        "artificial intelligence",
+        "productivity"
+      ]
+    },
+    {
+      "title": "Regional artificial intelligence development and agricultural ecological efficiency: evidence from Chinese provinces",
+      "url": "https://doi.org/10.3389/fsufs.2026.1922939",
+      "source": "openalex-employment",
+      "published": "2026-11-19",
+      "authors": "Limin Cheng, Tongyang Liu",
+      "abstract": "Existing studies have primarily focused on the effects of artificial intelligence (AI) on productivity and carbon emission efficiency, while systematic evidence on whether and through which mechanisms AI improves agricultural ecological efficiency (AEE) remains relatively limited. Using provincial panel data from China for the period 2005 to 2023, this study employs the entropy weighting method to measure regional AI development and a slack-based measure (SBM) model incorporating undesirable outputs to evaluate AEE. A two-way fixed effects model is further constructed to examine the effects of AI on AEE and the underlying mechanisms. AI is conceptually distinct from general digitalization, automation, precision agriculture, and information technology development, as its defining feature lies in leveraging machine learning, intelligent sensing, and algorithmic decision-making to achieve more advanced data processing and intelligent decision-making capabilities. The results indicate that a 0.1-unit increase in regional AI development is associated with an average increase of 0.01078 units in AEE. Mechanism analysis suggests that AI can indirectly improve AEE by promoting green finance development and industrial structure upgrading. Furthermore, agricultural technological innovation exhibits a significant threshold effect, with higher levels of technological innovation strengthening the positive effect of AI on AEE. Heterogeneity analysis reveals that the positive effect of AI on AEE is more pronounced in eastern regions, regions with lower levels of urbanization and agricultural modernization, and non-major grain-producing regions. Further analysis identifies positive spatial spillover effects of AI on AEE in neighboring regions, contributing to coordinated green agricultural development across local and neighboring regions. This study provides evidence on the effects, transmission mechanisms, and threshold conditions through which AI improves AEE, offering new empirical insights into the role of AI in facilitating the green transformation of agriculture and extending the analytical perspective of agricultural sustainability research.",
+      "score": 12,
+      "matched_terms": [
+        "ai",
+        "artificial intelligence",
+        "productivity"
+      ]
+    },
+    {
+      "title": "AI-Driven Transformation of Digital Platform Work: A Task-Based Model for Measuring Labour Disruption and Vulnerability, with Early Evidence from Online Freelancing in Kenya",
+      "url": "https://arxiv.org/abs/2611.25585",
+      "source": "openalex-employment",
+      "published": "2026-11-19",
+      "authors": "Farhan Latif",
+      "abstract": "Assessments of AI's impact on labour often rely on conventional occupational categories or broad market indicators. This dominant trend, however, obscures how tasks within the same occupation vary in practice across work arrangements. This limitation is particularly important in online freelancing, where workers are typically remote and devote substantial time performing unpaid tasks. This article introduces a task-based framework that distinguishes AI-driven disruption, defined as the extent of change in how work is performed, from livelihood vulnerability associated with that change. The framework is subsequently applied to assess the potential for automation, substitution, and enhancement across four categories of platform work: writing, virtual assistance, transcription, and web and software development. The model estimates high disruption across all four categories, while livelihood vulnerability scores are lower and vary by occupation. Potential efficiency gains on unpaid tasks partly offset potential wage impact associated with paid work in the model. The article compares these estimates with evidence from a survey of 52 online freelancers and 20 follow-up interviews in Nairobi, Kenya. Workers report changes in how they perform tasks and intensifying competition, while their accounts show how adapting their skills and using AI strategically shape their concerns about job loss. The findings show how task-based modelling can provide a baseline for assessing AI-driven changes in platform work and how workers' experiences differ from projections and help explain how these changes may threaten their livelihoods.",
+      "score": 12,
+      "matched_terms": [
+        "ai",
+        "job",
+        "occupation",
+        "wage",
+        "workers"
+      ]
+    },
+    {
+      "title": "AI Deactivation Reduces Loneliness and Increases Social Interaction",
+      "url": "https://arxiv.org/abs/2611.25263v1",
+      "source": "arxiv",
+      "published": "2026-11-18",
+      "authors": "Dora Zhao, Grace Wang, Yutong Zhang, Lujain Ibrahim, Robert E. Kraut, Diyi Yang",
+      "abstract": "General-purpose artificial intelligence (AI) assistants are increasingly embedded in everyday life, transforming how people accomplish tasks and potentially reshaping how they interact with others. Prior research has focused on how using AI for explicitly social purposes affects users' psychological well-being and social lives. Yet such uses account for only a small portion of interactions with general-purpose AI assistants. Whether using AI for everyday, instrumental tasks affects users' psychological well-being and social behavior remains unclear. Here we investigate these effects through a longitudinal deactivation experiment with active ChatGPT users (N=625), in which participants were randomly assigned to abstain from using AI assistants for either fourteen days (treatment) or one day (control). Participants used AI predominantly for instrumental purposes, with 84.7% reporting productivity as their most frequent use case. Two weeks of deactivation significantly reduced loneliness relative to the control group ($β= -0.10$, $p=0.03$), with reductions persisting two weeks after participants resumed using AI ($β= -0.16$, $p=0.02$). Deactivation also significantly increased the number of people participants interacted with in person and the time they spent socializing over the intervention period. Open-ended responses indicate that during the deactivation period participants sought help from others for tasks they otherwise would have delegated to AI and redirected attention toward social interaction. Overall, our findings suggest that even when AI is used primarily to accomplish instrumental tasks, it may inadvertently reduce opportunities for social interaction and connection.",
+      "score": 12,
+      "matched_terms": [
+        "ai",
+        "artificial intelligence",
+        "chatgpt",
+        "productivity"
+      ]
+    },
+    {
+      "title": "Beyond Operational Fluency: A Three-Tier AI Literacy Architecture for Reskilling and Upskilling in Strategic Talent Development",
+      "url": "https://doi.org/10.46787/ijaipil.v1i5.8291",
+      "source": "openalex-employment",
+      "published": "2026-11-18",
+      "authors": "Jie Ke",
+      "abstract": "Artificial intelligence (AI) occupies two positions in talent development simultaneously: the principal driver of the reskilling imperative, obsoleting skills faster than organizations can replace them, and increasingly the instrument through which reskilling is delivered, via adaptive platforms, generated content, and automated coaching. Reskilling scholarship assumes training technology is causally independent of the skill shift it responds to, an assumption prior industrial transitions permitted but AI's shared mechanism no longer does. This conceptual paper argues that AI's dual position generates five failure modes conventional reskilling models cannot detect: velocity without capability, a deskilling loop in which the instrument reproduces the condition it was deployed to remedy, personalization that fragments collective capability, stratified access that widens the divide reskilling was meant to close, and erosion of the entry-level roles through which experiential learning occurs. Drawing on integrative reviews of AI and workers' skills, Industry 4.0 reskilling blueprints, and AI governance scholarship, the paper applies the HUMAN framework (Human Oversight, Upskilling for AI Literacy, Meaningful Augmentation, Accountability and Audit, Networked Learning) to each failure mode, and extends its upskilling principle into a three-tier AI literacy architecture, operational fluency, evaluative literacy, and complementary capability, that depreciates at rates inverse to the investment it typically attracts. The paper translates this into five testable propositions and offers implementation guidance differentiated by organizational context.",
+      "score": 12,
+      "matched_terms": [
+        "ai",
+        "artificial intelligence",
+        "entry-level",
+        "workers"
+      ]
+    },
+    {
+      "title": "From CTE to Workforce Infrastructure: Rethinking Career and Technical Education in the United States and China in the Age of AI",
+      "url": "https://doi.org/10.46787/ijaipil.v1i4.8139",
+      "source": "openalex-employment",
+      "published": "2026-11-16",
+      "authors": "Viktor Wang",
+      "abstract": "Artificial intelligence (AI), automation, and digital transformation are reshaping occupational tasks and challenging conventional models of career and technical education (CTE). This conceptual article argues that CTE should be reconceptualized from an educational pathway to workforce infrastructure that continuously connects education, industry, technology, policy, and lifelong learning. Drawing on the contrasting institutional contexts of the United States and China, the article examines how decentralization, systemic coordination, industry-education integration, apprenticeship, technological transformation, and continuing skill development shape national workforce capacity. It proposes a conceptual model of CTE as workforce infrastructure organized around five interconnected functions and four outcomes: occupational competence, human agency, workforce adaptability, and economic and social mobility. Five propositions explain relationships among institutional articulation, AI augmentation, transferable human capabilities, lifelong learning, and equitable access. The article concludes that AI increases CTE's strategic importance by requiring integrated systems capable of continuously developing human expertise, judgment, adaptability, and opportunity.",
+      "score": 12,
+      "matched_terms": [
+        "ai",
+        "artificial intelligence",
+        "workforce"
+      ]
+    },
+    {
+      "title": "Generative AI adoption culture in organizations: A bibliometric review and research agenda (2022–2026)",
+      "url": "https://doi.org/10.5267/j.ijdns.2026.18",
+      "source": "openalex",
+      "published": "2027-01-01",
+      "authors": "Rini Fatmawati, Amelia Salsabila Khairunnisa",
+      "abstract": "Generative artificial intelligence (GenAI) has reshaped organizational work since the release of ChatGPT in late 2022, yet research on the cultural dimensions of its adoption remains fragmented. This study synthesizes the emerging field through a bibliometric review combining performance analysis, science mapping, and the Theory–Context–Characteristics–Methodology (TCCM) framework. A Scopus search executed on 5 May 2026 yielded 257 records, refined to 128 by automatic filters, and reduced to 69 articles after PRISMA 2020 screening. Analysis employed bibliometrix (R 4.3.0) and four VOSviewer 1.6.20 networks. The field exhibits an annual growth rate of 114.07%, with publications rising from one in 2022 to 36 in 2025 and 21 in early 2026 across 65 sources and 23 countries (China leads with 12 articles), anchored by Ng et al. (2025), Jo and Bang (2023), and Lee and Park (2024). The keyword map yields four thematic clusters; the co-citation map reveals three intellectual sub-structures (Technology Acceptance, Methodological and Applied GenAI, and GenAI in Management). Both layers converge on a technology-acceptance dominant, methodologically homogeneous, and culturally thin configuration: classical culture references (Schein, Cameron, and Quinn) and dedicated AI-ethics works do not reach the co-citation core. To redress this asymmetry, we propose an integrative framework: Leadership Vision → AI Literacy and Trust → Psychological Safety → Ethical Climate → GenAI Adoption Culture → Productivity, Innovation, and Well-being. The agenda outlines five priorities, including cross-cultural instruments, longitudinal multi-wave designs, and emerging-market studies foregrounding Indonesia and ASEAN.",
+      "score": 11,
+      "matched_terms": [
+        "ai",
+        "artificial intelligence",
+        "chatgpt",
+        "genai",
+        "generative ai",
+        "productivity"
+      ]
+    },
+    {
+      "title": "When Do LLMs Model the Right Target? Problem Formulation in High-Stakes Risk Prediction",
+      "url": "https://arxiv.org/abs/2611.23638v1",
+      "source": "arxiv",
+      "published": "2026-11-18",
+      "authors": "Jennifer Zhang, Amanda Coston",
+      "abstract": "Generative AI is increasingly used to assist with data science tasks, yet fundamental questions remain about its ability to correctly formulate analytical problems. We investigate how well large language models (LLMs) can formulate prediction problems when developing models for high-stakes decision making. We focus on one particular challenge to validity: decision dependency, which arises when historical decisions affect observed outcomes. We evaluate this aspect of problem formulation in LLM-generated code and explanations across child-welfare, healthcare, and employment settings, using 11 models from OpenAI and Anthropic and seven prompt conditions. We assess whether the LLM-generated code implements a procedure appropriate for estimating the intended outcome under the study's assumptions and whether the explanation acknowledges decision dependency. We find that LLMs do not reliably address decision dependency without guidance in the prompt. When prompts specify the target, the assumption needed to estimate it, and the estimation procedure, target-aligned implementation reaches 99-100%. Among frontier models, a simple prompt description of how decisions affect outcomes appears sufficient to elicit target-aligned implementation. Some responses also acknowledge decision dependency without addressing it in their code. Our findings suggest that analysts should not rely on LLMs to correctly formulate prediction problems without explicit methodological guidance and careful review. We propose validity-centered guidelines for LLM-assisted predictive modeling, covering prompt formulation, validation of the target and estimation procedure, and identification of key assumptions. Establishing validity is a necessary early step in evaluating whether to deploy a predictive model in a high-stakes setting, but deployment requires weighing broader ethical, institutional, and practical considerations.",
+      "score": 11,
+      "matched_terms": [
+        "employment",
+        "generative ai",
+        "large language models",
+        "llm",
+        "llms"
+      ]
+    },
+    {
+      "title": "AI-Enabled Traceability and Extended Producer Responsibility in India’s Textile Waste Sector: Legal Challenges and a Framework for Sustainable Governance",
+      "url": "https://doi.org/10.51584/ijrias.2026.11100133",
+      "source": "openalex-employment",
+      "published": "2026-11-19",
+      "authors": "Divya Verma, Anupama Thakur",
+      "abstract": "This study examines whether, and under what legal conditions, AI-enabled traceability can support a credible and enforceable extended producer responsibility (EPR) regime for textile waste in India, and proposes a framework for doing so. India generates an estimated 7.07 million tonnes of textile waste a year, mostly recovered through informal, low-value channels, yet it has no notified textile EPR scheme and no textile-specific legal definitions of reuse, recycling or recovery. The study combines doctrinal analysis of Indian primary law as at 8 November 2026, a functional comparison with France (the longest-running textile EPR scheme) and the European Union (Directive (EU) 2025/1892 and the Ecodesign for Sustainable Products Regulation), and a structured review of the technical literature. Studies were selected against stated inclusion criteria, and each AI function was rated on a technology-readiness scale and on its readiness for regulatory reliance. (RQ1) Indian law imposes no textile-specific obligations and defines no textile outcomes, so AI-measured results have no legal benchmark. (RQ2) AI functions are validated mainly in laboratories or prototypes and are not yet reliable for India’s blended, contaminated waste. (RQ3) The decisive legal risks are evidentiary status, data governance, liability allocation and the informal workforce, not the algorithms themselves. In answer to RQ4, the paper proposes a verified-outcome EPR framework with five principles: outcomes defined in law; AI as a regulated verification layer; data minimisation with tiered access; primary liability on producers and producer responsibility organisations; and a just transition for informal workers, to be introduced through phased, regulator-supervised cluster pilots. The framework would improve regulatory accountability by making verification evidence reliable and open to challenge, improve recycling outcomes by rewarding fibre-to-fibre recycling over energy recovery, and protect informal workers by bringing them into the system as registered participants.",
+      "score": 10,
+      "matched_terms": [
+        "ai",
+        "workers",
+        "workforce"
+      ]
+    },
+    {
+      "title": "Who Gains from an Automated Economy? An Eight-Class, Life-Cycle Model of Consumption, Production, Institutional Capture, and Income and Wealth Inequality in Techoslavakia",
+      "url": "https://doi.org/10.21203/rs.3.rs-11775575/v1",
+      "source": "openalex-employment",
+      "published": "2026-11-19",
+      "authors": "Muhmmad Muqeem Islam Muqeem",
+      "abstract": "Artificial intelligence and robotics can raise output while concentrating its gains among those who own the new capital. This paper asks when that happens, how strongly, and which public choices change the outcome. It builds a transparent synthetic economy, Techoslavakia, with 30 million people in 2026, eight economic classes and eight age groups, and income and wealth Gini coefficients of exactly 0.500. The model links household spending with minimum needs, production with machines that can replace workers, new tasks that create work, a full government budget, a wealth ledger, and explicit measures of diversion, waste and market power. It reproduces the starting national accounts exactly and passes 1,454 automated consistency checks. Nine policy packages are compared over 25 years, and results are tested with Shapley decompositions, one-at-a-time sensitivity variants, 300 global sensitivity draws and a parent–child mobility microsimulation. Under an assumed path in which machines could replace 90 per cent of baseline job-equivalents by 2046, with existing institutions and no compensation, the income Gini rises to 0.581 and the wealth Gini to 0.847 by 2051, poverty doubles to 20.4 per cent and unemployment reaches 42.5 per cent. Losses arise through job displacement, weaker wages and the concentration of automation equity among top owners. Classes 1 to 7 lose 7 to 41 per cent of income against a no-automation path, while the top 1 per cent nearly doubles its income. Income and wealth inequality need not move together, and a lower Gini does not by itself prove higher welfare. A package that combines a public ownership fund, care and education services, taxation of rents and capital income, competition policy and competent administration cuts the income Gini to 0.421 and poverty to 1.1 per cent, and outperforms the no-policy path in all 300 sensitivity draws. The same package under capture loses about half its gains. A 10 per cent robot-use levy raises only about 4 billion crowns a year, while removing an existing robot tax preference raises 60 billion. Hospitality absorbs at most 0.61 million of 9.05 million displaced job-equivalents, so service work cannot by itself replace lost employment. The synthesis is that ownership, taxation of rents and institutional quality, more than the technology itself, decide who gains from automation. For countries such as Pakistan, this implies that reform of tax administration, competition and public asset ownership should begin well before automation arrives at scale. All results are conditional simulations, not forecasts.",
+      "score": 9,
+      "matched_terms": [
+        "artificial intelligence",
+        "displacement",
+        "employment",
+        "job",
+        "unemployment",
+        "wages",
+        "workers"
+      ]
+    },
+    {
+      "title": "Beyond Incrementalism: Navigating Organizational Change, Behavioral Inertia, and Human Fear in AI-Driven Innovation",
+      "url": "https://doi.org/10.67644/pandr.v3i1.2470",
+      "source": "openalex-employment",
+      "published": "2026-11-19",
+      "authors": "Ken Russell, Joseph Hubert Wilck IV, Scott Gerard, John H. Hoag, Becky Scott, John Harrison",
+      "abstract": "Organizations now have access to unprecedented compute, generative AI tools, multi-agent workflows, and data analytics capabilities, yet most AI initiatives fail to produce measurable transformation. This paper draws on sixteen transcribed sessions of the Barton College Data Analytics Consortium (October 2025–June 2026), a group of educators and practitioners in higher education, data science consulting, and industrial engineering, read alongside change-management, behavioral, and AI-productivity literature. We argue that the primary bottleneck to AI-driven transformation is neither financial nor technical but organizational: the human behavior that resists change. We identify eight distinct sources of resistance grouped into three families (threat-based, principled, and experiential), describe a “fluency trap” in which polished AI output suppresses scrutiny, and show that data literacy is a frequently missing prerequisite for AI readiness. Case evidence contrasts the automation of existing tasks with genuine agentic redesign of work. We conclude with a three-step framework for adoption (fix the process first, commit to scaling rather than downsizing, and run low-stakes, high-visibility pilots) and argue that without confronting behavioral inertia, organizations do not innovate; they simply produce, in one author’s words, “a digital version of a crappy process.”",
+      "score": 9,
+      "matched_terms": [
+        "ai",
+        "generative ai",
+        "productivity"
+      ]
+    },
+    {
+      "title": "A Crowd-Audited Atlas of Implicit Bias in LLM-Powered Agents",
+      "url": "https://arxiv.org/abs/2611.21376v1",
+      "source": "arxiv",
+      "published": "2026-11-16",
+      "authors": "Jason Alexander, Yuxuan Li, Michael Licamele, Wesley Hanwen Deng, Sauvik Das",
+      "abstract": "Prior work has shown that large language models (LLMs) express implicit biases in high-publicity, one-off decision scenarios such as hiring and intelligence assessment. However, as people increasingly employ autonomous, LLM-powered AI agents that make decisions on their behalf in doing day-to-day tasks, it is of critical importance that we understand how implicit biases, based on sociodemographic assumptions, emerge across a broad milieu of workaday decision scenarios. We used the 17 domains of daily activity in the American Time Use Survey (ATUS) to generate an atlas of 506 decision scenarios in which LLMs --- endowed with personas representing different races, gender identities, and political ideologies --- expressed significant implicit bias. Next, in a crowdsourced audit, 500 participants made 8,010 binary choices about which implicitly biased decision scenarios most deserved further review. We found that participants prioritized decision scenarios that had broad relevance (e.g., about food choices), were high stakes (e.g., about health), and where all members of a simulated sociodemographic group made unanimous decisions (because it was a clear indication of stereotyping). They were less swayed by the magnitude of an observed disparity or the specific ATUS domain the decision scenario represented. When examining the rationale behind their prioritization choices, we found that participants often interpreted disparities as traits of demographic groups and judged whether those traits seemed plausible, often based on their own internalized stereotypes. We discuss implications for building personalized AI agents, digital twins, social simulations, and for using crowdsourced bias audits.",
+      "score": 9,
+      "matched_terms": [
+        "ai",
+        "hiring",
+        "large language models",
+        "llm",
+        "llms"
+      ]
+    },
+    {
+      "title": "Artificial intelligence and digitalization reinforce inequality in developing countries",
+      "url": "https://doi.org/10.1007/s44282-026-00678-y",
+      "source": "openalex",
+      "published": "2026-11-21",
+      "authors": "Bora Ly, Romny Ly, Sokhom Ma",
+      "abstract": "Digitalization and artificial intelligence (AI) can expand access, productivity, and service delivery in developing countries, yet their benefits are distributed unevenly and may reinforce pre-existing structural inequalities. This systematic review distinguishes foundational digitalization from more computationally intensive AI applications and re-audits the evidence base in response to concerns about scope and reproducibility. Of the 75 publications retained in the broader literature corpus, 57 meet the prespecified criteria for the systematic synthesis; 18 are retained only as contextual/background literature and are not included in evidence counts. The review uses PRISMA 2020 reporting principles and a design-specific Mixed Methods Appraisal Tool (MMAT) procedure for eligible empirical studies. The thematic synthesis presents four interconnected mechanisms: unequal digital and AI capabilities, workforce and value-distribution pressures, uneven socio-economic results, and governance constraints. These are integrated into the ‘Vicious Cycle of Techno-Dependency’ as an interpretive framework, not a tested causal model. Evidence indicates that the strength and form of these mechanisms vary across country contexts and institutional capacities. Recent post-search studies from Brazil, India, and Indonesia further suggest that data-protection and sovereignty initiatives can strengthen accountability, but their effectiveness is conditional and remains incomplete. Policy priorities therefore include locally appropriate infrastructure and skills investment, participatory data governance, algorithmic accountability, and evaluation of implementation outcomes rather than reliance on formal policy adoption alone.",
+      "score": 8,
+      "matched_terms": [
+        "ai",
+        "artificial intelligence",
+        "productivity",
+        "workforce"
+      ]
+    },
+    {
+      "title": "Platform workers: issues with qualifications and new opportunities of protection",
+      "url": "https://hdl.handle.net/11576/2784991",
+      "source": "openalex-employment",
+      "published": "2026-11-18",
+      "authors": "Fulvio Mannino",
+      "abstract": "The rise of digital platforms and Artificial Intelligence marks a profound transformation in contemporary labour, reshaping production models, the relationship between employer and worker, and the very notion of fundamental rights protection. Within the gig economy, work is increasingly mediated by algorithms that allocate, evaluate, and remunerate tasks, establishing a new managerial paradigm grounded in automated decision-making and large-scale data collection. This form of algorithmic management provides clear advantages in terms of efficiency, flexibility, and market accessibility, yet it simultaneously raises critical questions concerning transparency, control, and social justice. Profiling systems and predictive logics underpinning platform work tend to diminish human discretion and obscure working conditions, with direct repercussions for workers’ health, safety, and psychological well-being. Stress, isolation, precariousness, and informational asymmetries emerge as new risks within a model where technology acts as a powerful organisational instrument. The European Union has initiated an ambitious regulatory strategy aimed at balancing innovation with social protection through the Artificial Intelligence Regulation, the GDPR, and the Directive on Platform Work. These instruments introduce obligations of transparency, risk assessment, and human oversight, ensuring that algorithms are deployed in an ethical and accountable manner. National experiences in Italy, Spain, and the United Kingdom reveal diverse yet convergent approaches, acknowledging the need to adapt traditional legal categories of subordination and autonomy to the dynamics of digital labour. At the international level, initiatives led by the International Labour Organization and ISO standards promote a governance model for Artificial Intelligence based on participation, safety, and sustainability, striving towards a global framework that safeguards the dignity and well-being of platform workers. This study advances a vision of digital labour as a space where technological innovation and fundamental rights may coexist, placing the human person at the centre of the algorithmic ecosystem and outlining a future of work that is transparent, equitable, and sustainable.",
+      "score": 8,
+      "matched_terms": [
+        "artificial intelligence",
+        "worker",
+        "workers"
+      ]
+    },
+    {
+      "title": "AI, Specialization, and the Organization of Knowledge Work: Evidence from Legal Services",
+      "url": "https://arxiv.org/abs/2611.23354v2",
+      "source": "arxiv",
+      "published": "2026-11-17",
+      "authors": "Liu Zhang, Mark Esposito, Isabel Yang",
+      "abstract": "Artificial intelligence makes specialized knowledge cheaper to use, but its effects on professional-service firms depend on how clients reallocate work and how suppliers respond. We develop a framework linking individual self-provision, enterprise make-or-buy decisions, and pricing by specialist firms. As AI improves lower-priced alternatives, clients may reallocate work across outside providers without bringing it in-house. If the departing work is more price-sensitive than the work that remains, premium firms may raise their optimal markups even as their share of work declines. We examine these margins in U.S. legal services. Across 89 federal districts, a difference-in-differences analysis finds a 6.6-percentage-point increase in non-prisoner self-representation relative to prisoner petitions by fiscal 2025, remaining substantial after adjusting for pre-existing trends. In contrast, lawyer employment shows no clear post-2022 shift toward client firms. Legal-AI benchmarks reveal continuing limitations in reliably completing complex, multi-step work, offering one possible explanation. Meanwhile, the largest law firms reported 13% revenue growth in 2025 despite nearly flat billable hours, while lower-priced firms experienced stronger demand growth. Reported AI integration is also stronger among firms with lower revenue per lawyer. These patterns highlight the importance of changes in work allocation and supplier competition, even as much of the underlying reallocation predates generative AI. The findings illustrate why cheaper expertise need not produce either widespread internalization or declining prices for premium professional services.",
+      "score": 8,
+      "matched_terms": [
+        "ai",
+        "artificial intelligence",
+        "employment",
+        "generative ai"
+      ]
+    },
+    {
+      "title": "Generative AI and Student Freelancing: Skills, Income Opportunities, and Barriers in Somalia",
+      "url": "https://doi.org/10.12688/f1000research.193308.1",
+      "source": "openalex",
+      "published": "2026-11-20",
+      "authors": "Ibrahim Taano, Ahmed Ahmed Ali",
+      "abstract": "Background In fragile, post-conflict economies facing severe youth unemployment, digital freelancing offers an essential pathway to economic self-reliance. This study investigates how Generative AI Competence (GAIC) drives Freelance Digital Skill Augmentation (FDSA) and Platform Market Competitiveness (PMC) to enhance Student Freelance Income Generation (SFIG), while assessing the moderating impact of Structural, Financial, and Institutional Barriers (SFIB) in Somalia. Methods Drawing on Augmented Human Capital Theory, Platform Labor Theory, and the Capability Approach, a cross-sectional survey collected primary empirical data from N = 415 active university student freelancers across Mogadishu, Hargeisa, Garowe, and Kismayo. Data were analyzed using Partial Least Squares Structural Equation Modelling (PLS-SEM) in SmartPLS 4 with 5,000 bootstrap resamples, psychometric validation, and interaction moderation analyses. Results Generative AI Competence exerts significant positive direct effects on Freelance Digital Skill Augmentation (β = 0.548, p < 0.001) and Platform Market Competitiveness (β = 0.312, p < 0.001). Digital skill augmentation strongly predicts Student Freelance Income Generation (β = 0.384, p < 0.001) and mediates GenAI's economic impact. However, structural barriers significantly dampen this conversion (β = -0.198, p < 0.001), causing a 68.0% drop in income velocity under high-barrier conditions. International payment exclusion (lack of PayPal/Stripe) and platform KYC geoblocking are identified as the most severe institutional constraints. The model explains 61.4% of variance in student freelance income (R² = 0.614). Conclusions Generative AI serves as a powerful leapfrogging mechanism that mitigates local pedagogical voids and enhances global market access for youth in fragile economies. Nevertheless, technological competence alone cannot overcome structural exclusion. Developing accessible cross-border payment gateways and resolving platform geoblocking are urgent imperatives to unlock Somalia's digital youth dividend.",
+      "score": 7,
+      "matched_terms": [
+        "genai",
+        "generative ai",
+        "unemployment"
+      ]
+    },
+    {
+      "title": "Artificial Intelligence, Task Displacement and the Labor Income Share: A Theoretical Analysis Based on the Task Framework",
+      "url": "https://doi.org/10.22158/ibes.v8n4p205",
+      "source": "openalex-employment",
+      "published": "2026-11-18",
+      "authors": "Beibei Yang",
+      "abstract": "Artificial intelligence is progressively reassigning production tasks from labor to capital, and the consequences for the labor income share lie at the centre of current research on macroeconomic distribution. This paper builds a static task-based model with a continuum of tasks and derives a closed-form solution for the labor income share in terms of three dimensions that are in principle observable: the breadth of automation, efficiency-adjusted capital intensity, and the elasticity of substitution across tasks. Four propositions follow. Holding capital intensity fixed, a greater breadth of automation always lowers the labor income share, with an elasticity depending only on the share itself and on the substitution elasticity; the direction of the effect of capital intensity is signed by that elasticity; and new task creation operates in the opposite direction, with an elasticity exactly (1+a) times that of displacement. Combining the three yields a condition that can be checked term by term for a stable labor share. Applied to China, the framework accounts for the decline, trough and stabilization of the share, and identifies the extension of automation to routine cognitive tasks as a potential break in that balance.",
+      "score": 7,
+      "matched_terms": [
+        "artificial intelligence",
+        "displacement",
+        "labor share"
+      ]
+    },
+    {
+      "title": "Marx and the Right to Shorter Working Hours under AI",
+      "url": "https://doi.org/10.33774/apsa-2026-514ph",
+      "source": "openalex-employment",
+      "published": "2026-11-16",
+      "authors": "DeKun Yang",
+      "abstract": "Who should benefit when artificial intelligence lets society produce the same goods and services with less labour? This article argues that productivity gains should support shorter working hours, secure employment and protected living standards through enforceable collective institutions. Drawing on Marx's analysis of the working day and freedom, it connects technological change to control over time. An accounting framework clarifies when employment preservation and shorter hours are compatible, while distinguishing feasibility from firms' incentives. Selected empirical studies and bargaining agreements illuminate different mechanisms without establishing an economy-wide causal effect. It proposes coordinated working-time standards, bargaining rights, income protection and redistribution across sectors. It also addresses demand, care, work intensity and unequal access to technological gains. Reducing necessary toil requires changing the authority to allocate productivity gains, making free time a social entitlement rather than a discretionary reward for efficiency.",
+      "score": 7,
+      "matched_terms": [
+        "ai",
+        "artificial intelligence",
+        "employment",
+        "productivity"
+      ]
+    },
+    {
+      "title": "Kisan Sahayak: A Smart Agricultural Marketplace for Connecting Farmers, Labourers, and Machinery Providers",
+      "url": "https://doi.org/10.48175/ijarsct-40828",
+      "source": "openalex-employment",
+      "published": "2026-11-18",
+      "authors": "Najan Ramesh Somnath Naik Balkrushna Anil, Kolhe Aditya Jalindar Nagargoje Sushant Dattatray, Medhe S. S., Jadhav H. B.",
+      "abstract": "Agricultural activities depend on the timely coordi-nation of land, labour, machinery, information, and local services. In many rural settings, farmers identify workers and equipment through personal contacts and fragmented communication chan-nels. Such methods can make it difficult to discover available service providers beyond an immediate network, communicate work requirements consistently, and maintain a clear record of requests. Agricultural labourers and machinery owners can face a corresponding difficulty in communicating their availability to potential customers. This paper presents Kisan Sahayak, a theoretical, mobile-first agricultural marketplace designed to connect farmers, labourers, and machinery providers through a common web platform. The proposed system is organized around the MongoDB, Express.js, React.js, and Node.js (MERN) stack. Its conceptual capabilities include role-based profiles, location-aware discovery, farmer job postings, direct worker invitations, request acceptance or rejec-tion, wage negotiation, machinery listings, and service-request tracking. An optional artificial-intelligence assistance layer is proposed for multilingual platform guidance and explainable matching based on location, skills, availability, and stated pref-erences. The paper details the system architecture, data model, stake-holder workflows, marketplace rules, AI design, security and privacy controls, deployment considerations, and an evaluation framework. The contribution is an architectural and process model; no field trial, measured performance result, or im-plemented AI capability is claimed. The design is intended to provide a foundation for subsequent implementation and empirical evaluation in agricultural communities",
+      "score": 6,
+      "matched_terms": [
+        "ai",
+        "job",
+        "wage",
+        "worker",
+        "workers"
+      ]
+    },
+    {
+      "title": "Automation, AI and the Changing Skills Demand for University Graduates: A Comparative Qualitative Study across Four Economic Sectors",
+      "url": "https://doi.org/10.21203/rs.3.rs-11554854/v1",
+      "source": "openalex-employment",
+      "published": "2026-11-16",
+      "authors": "Muhammed Zakir Hossain, Sinthia Akter",
+      "abstract": "Automation, digitalization, and, more recently, generative artificial intelligence (gAI) are changing the skill sets employers demand. However, understanding remains limited about how different sector-level stakeholders in developing countries perceive these innovations, and about these technologies' impact on university graduates' employability. The comparative qualitative study draws on 60 interviews with graduates, employer representatives and academics, five of each type per sector, in four Bangladeshi sectors (readymade garments and textiles (RMG); information and communication technology and IT-enabled services (ICT/ITES); banking and financial services; logistics and supply chain management), as well as multi-sector comparative data. Reflexive thematic analysis yielded cross-sector themes, which include framing of technology and specific discussion of AI in ICT/ITES, disciplinary expertise being necessary but no longer sufficient, with digital, data and adaptive capabilities increasingly essential and learned largely outside formal programmes, cross-sector problems with institutional coordination due to curricula lag (the mode and extent of lag varies according to discipline), reasons why these results should not be taken as an indication of job loss and the impact of gAI, as well as sector-specific and generic implications for universities, sectors and employer associations with clear links to the data. Shortcomings include reliance on perceptions, small cell sizes across multiple parameters, and a lack of a worker perspective.",
+      "score": 6,
+      "matched_terms": [
+        "ai",
+        "artificial intelligence",
+        "job",
+        "worker"
+      ]
+    },
+    {
+      "title": "Sprachmodelle und Kompetenzverschiebungen in der öffentlichen Verwaltung",
+      "url": "https://doi.org/10.5334/ssas.243",
+      "source": "openalex",
+      "published": "2026-11-20",
+      "authors": "Christoph Hauser, Lia Nadia Lüdi, Yannick Wey",
+      "abstract": "The rapid adoption of Large Language Models (LLMs) confronts document-intensive public administration with structural changes that impact cognitive work processes and place new demands on staff. This exploratory, qualitative study examines the effects of this technological deployment on the competence profiles of employees in Swiss cantonal and municipal administrations. Based on eight semi-structured expert interviews with HR and digitalization executives, the study draws a nuanced picture of de-skilling, up-skilling, and re-skilling processes. While the automation of routine tasks jeopardizes traditional entry-level positions (de-skilling) and threatens to erode domain knowledge – which is becoming increasingly vital for evaluation and accountability over the longer term – LLMs bring about a perceived increase in autonomy and self-efficacy at the individual level (up-skilling). Contrary to the hypothesis of «metacognitive laziness» frequently postulated in the literature, the dissonance between algorithmic probabilism and the rule-of-law zero-tolerance policy for errors demands an elevation of higher-order thinking skills (re-skilling). The core human contribution shifts from pure text generation toward higher-order thinking skills, requiring verification and accountability skills within human-in-the-loop frameworks. Institutionally, a paradoxical, technology-induced workload inflation is also evident: technological time savings in text production are neutralized by a rising volume of longer, AI-generated external inquiries as well as higher qualitative demands, meaning that the anticipated reduction in workload for staff fails to materialize. The article concludes with strategic recommendations for the proactive and legally compliant management of this socio-technical transformation process.",
+      "score": 5,
+      "matched_terms": [
+        "ai",
+        "entry-level",
+        "large language models",
+        "llms"
+      ]
+    },
+    {
+      "title": "Perspective Chapter: Innovations in Higher Education Process – Problems and Development Perspectives in Azerbaijan",
+      "url": "https://doi.org/10.5772/intechopen.1018084",
+      "source": "openalex-employment",
+      "published": "2026-11-18",
+      "authors": "Samira Huseyn qizi Abasova",
+      "abstract": "The main purpose of the investigation is the study of innovations, problems, and development perspectives in Azerbaijan’s higher education. The subjects of this research are: (a) a literature review of innovations in the higher education system; (b) an assessment of indices that characterize the higher education system in the former United Soviet Socialist Countries (USSR) republics in 1992–2026 and in Azerbaijan; (c) state support for innovations in the higher education sector; (d) investigation of perspectives of innovative changes in Azerbaijan’s higher education. The author analyzed the methodological base of innovations in the higher education system, as well as organizational, economic, social, and technological factors that influence higher education development in countries. The positive and negative aspects of innovative transformations were identified by PESTE and SWOT analysis. In all republics of the former USSR, and in Azerbaijan also, it is observed: (1) a mismatch between education and employment; (2) the unemployment rate among those with vocational education; (3) the unemployment rate among those with tertiary education. In Azerbaijan, the state regulates the specializations required for the national economy, public spending on higher education, the qualifications of faculty and students, and the integration of information technology and artificial intelligence (AI) into the educational process; while this allows for control over all aspects of education, it simultaneously stifles the initiative of higher education institutions regarding innovative transformation. Developing technological equipment and ensuring high-quality internet connections in Azerbaijan, as well as improving the legislative framework related to this new form of education, are important areas for the development of the state’s strategy in the higher education system.",
+      "score": 5,
+      "matched_terms": [
+        "ai",
+        "artificial intelligence",
+        "employment",
+        "unemployment"
+      ]
+    },
+    {
+      "title": "International Migration and Remittance Patterns in Southern Africa: Evidence from Cape Town, South Africa",
+      "url": "https://doi.org/10.1007/978-3-032-30069-0_3",
+      "source": "openalex-employment",
+      "published": "2026-11-17",
+      "authors": "Sean Thulani Sithole, Mulugeta F. Dinbabo, Daniel S. Tevera",
+      "abstract": "This chapter explores the intersections among international migration, remittances, and resilience in Southern Africa. Despite socio-economic and political vulnerabilities, migrants continue to remit to support the livelihoods/welfare of households in their countries of origin. The COVID-19 pandemic disrupted remittance flows. Lockdowns, mobility restrictions, and unemployment, along with job/income losses, increased precarity among migrants and their dependents. Notably, Fintech and mobile/digital remittance technologies emerged as critical adaptive mechanisms by providing faster, more accessible, secure, and affordable alternatives to formal banking systems. Disruptions to informal channels were also mitigated. Based on survey data (n = 844) and in-depth interviews (n = 32) with ZimbabweansZimbabweans, Somalis, and Congolese migrants in Cape Town, South Africa, the research demonstrates that pandemic precarity reshaped transnational remitting practices and accelerated the adoption of digital financial servicesDigital financial inclusiondigital financial services. The digital/mobile systems have become increasingly prominent in the post-pandemic context, complementing trust-based informal channels in a hybrid landscape and promoting digital/financial inclusionDigital financedigital financial inclusion. Therefore, there is a need for inclusive digital financial ecosystems, enabling regulations, infrastructure investments, the adoption of artificial intelligence (AI), and enhanced digital/financial literacy. This is crucial for advancing the financial inclusion of undocumented migrants, unbanked/under-banked individuals, women, informal workers and traders, and low-income urban and rural households in Southern Africa.",
+      "score": 5,
+      "matched_terms": [
+        "ai",
+        "artificial intelligence",
+        "job",
+        "unemployment",
+        "workers"
+      ]
+    },
+    {
+      "title": "Interrogating Emerging Gender Issues in the Context of a Rapidly Changing World",
+      "url": "https://doi.org/10.59765/bys39",
+      "source": "openalex-employment",
+      "published": "2026-11-17",
+      "authors": "",
+      "abstract": "This study examines emerging gender issues in a rapidly changing world shaped by globalization, technological innovation, climate change, shifting labour markets, and evolving social norms.It explores contemporary challenges, including digital gender-based violence (GBV), artificial intelligence (AI) and algorithmic bias, climate-induced vulnerabilities, unpaid care work, intersectionality, and changing gender identities.A rapid literature review and critical synthesis methodology were adopted.Relevant peer-reviewed journal articles, policy reports, and books published primarily between 2018 and 2025 were systematically identified through searches of Google Scholar, Scopus, Web of Science, JSTOR, and reports from international organisations, including UN Women, the International Labour Organisation, UNESCO, and the World Economic Forum.Studies were selected based on relevance, quality, and contribution to emerging gender debates.Guided by intersectionality theory, decolonial feminist perspectives, and gendertransformative approaches, the review finds that gender inequalities persist despite global commitments towards the Sustainable Development Goals, particularly SDGs 5, 10, 13, and 16.Women perform over 76% of unpaid care work, contributing an estimated US$10.8 trillion annually in unrecognised economic value, while global gender parity may still require 134 years to achieve.Digital GBV, AI-driven bias, climate change, and the underrepresentation of women in STEM continue to reinforce structural inequalities.The study recommends intersectional policymaking, feminist AI governance, recognition of unpaid care work, gender-responsive climate action, and greater inclusion of Global South perspectives to accelerate sustainable gender equality.",
+      "score": 5,
+      "matched_terms": [
+        "ai",
+        "artificial intelligence",
+        "labour markets"
+      ]
+    },
+    {
+      "title": "Past Automation and Future AI: How Weak Links Tame the Growth Explosion -- by Charles I. Jones, Christopher Tonetti",
+      "url": "https://www.nber.org/papers/w36050#fromrss",
+      "source": "nber",
+      "published": null,
+      "authors": "",
+      "abstract": "How much past growth is due to automation, and what does this imply for the future of AI? We perform task-based growth accounting and show that capital task productivity has grown about 5 percentage points per year faster than labor task productivity in the U.S. economy. The main benefit of automation is using rapidly improving machines instead of slowly-improving humans on more tasks. With these historical measures, we calibrate a growth model in which the production of goods and ideas is endogenously automated. Growth accelerates and can explode. However, the acceleration is slowed by \"weak links,\" tasks still performed by labor.",
+      "score": 5,
+      "matched_terms": [
+        "ai",
+        "productivity"
+      ]
+    }
+  ]
+}
